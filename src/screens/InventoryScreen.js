@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 
-export default class InventoryScreen extends Component {
+class InventoryScreen extends Component {
   static navigationOptions = {
     title: 'Inventory',
     headerStyle: {
@@ -40,3 +40,5 @@ const styles = StyleSheet.create({
     margin: 10,
   }
 });
+
+export { InventoryScreen };

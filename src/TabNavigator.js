@@ -12,8 +12,10 @@ import {
   StatusTab
 } from './tabs';
 
-import CharacterScreen from './screens/CharacterScreen';
-import InventoryScreen from './screens/InventoryScreen';
+import {
+  CharacterScreen,
+  InventoryScreen
+} from './screens';
 
 import TabBarIcon from './components/TabBarIcon';
 

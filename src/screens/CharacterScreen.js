@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 
-export default class CharacterScreen extends Component {
+class CharacterScreen extends Component {
   static navigationOptions = {
     title: 'Character',
     headerStyle: {
@@ -40,3 +40,5 @@ const styles = StyleSheet.create({
     margin: 10,
   }
 });
+
+export { CharacterScreen };

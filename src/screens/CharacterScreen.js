@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import {
-  Button,
   StyleSheet,
   Text,
   View
@@ -9,20 +8,20 @@ import {
 
 export default class CharacterScreen extends Component {
   static navigationOptions = {
-    title: 'Character'
+    title: 'Character',
+    headerStyle: {
+      backgroundColor: '#FA6900',
+    },
+    headerTintColor: '#FFF',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    }
   }
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.txtScreen}>Character Screen</Text>
-        <Button
-          title='Go to Inventory'
-          onPress={() => {
-            this.props.navigation.navigate('Inventory');
-          }}
-          color='#F96A26'
-        />
       </View>
     );
   }

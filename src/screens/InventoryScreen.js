@@ -8,7 +8,14 @@ import {
 
 export default class InventoryScreen extends Component {
   static navigationOptions = {
-    title: 'Inventory'
+    title: 'Inventory',
+    headerStyle: {
+      backgroundColor: '#FA6900',
+    },
+    headerTintColor: '#FFF',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    }
   }
 
   render() {

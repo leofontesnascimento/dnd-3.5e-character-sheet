@@ -11,7 +11,16 @@ const RootStack = createStackNavigator(
     Inventory: InventoryScreen
   },
   {
-    initialRouteName: 'Character'
+    initialRouteName: 'Character',
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#FA6900',
+      },
+      headerTintColor: '#FFF',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      }
+    }
   }
 );
 

@@ -9,14 +9,7 @@ import {
 
 export default class CharacterScreen extends Component {
   static navigationOptions = {
-    title: 'Character',
-    headerStyle: {
-      backgroundColor: '#F96A26',
-    },
-    headerTintColor: '#FFF',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    }
+    title: 'Character'
   }
 
   render() {

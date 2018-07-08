@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import {
   Button,
@@ -7,18 +7,22 @@ import {
   View
 } from 'react-native';
 
-export default props => (
-  <View style={styles.container}>
-    <Text style={styles.txtScreen}>Character Screen</Text>
-    <Button
-      title='Go to Inventory'
-      onPress={() => {
-        props.navigation.navigate('Inventory');
-      }}
-      color='#F96A26'
-    />
-  </View>
-);
+export default class CharacterScreen extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.txtScreen}>Character Screen</Text>
+        <Button
+          title='Go to Inventory'
+          onPress={() => {
+            this.props.navigation.navigate('Inventory');
+          }}
+          color='#F96A26'
+        />
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {

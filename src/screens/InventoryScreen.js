@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import {
   StyleSheet,
@@ -6,11 +6,15 @@ import {
   View
 } from 'react-native';
 
-export default props => (
-  <View style={styles.container}>
-    <Text style={styles.txtScreen}>Inventory Screen</Text>
-  </View>
-);
+export default class InventoryScreen extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.txtScreen}>Inventory Screen</Text>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {

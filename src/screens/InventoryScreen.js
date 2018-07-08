@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  Button,
   StyleSheet,
   Text,
   View
@@ -9,14 +8,7 @@ import {
 
 export default props => (
   <View style={styles.container}>
-    <Text style={styles.txtScreen}>Character Screen</Text>
-    <Button
-      title='Go to Inventory'
-      onPress={() => {
-        props.navigation.navigate('Inventory');
-      }}
-      color='#F96A26'
-    />
+    <Text style={styles.txtScreen}>Inventory Screen</Text>
   </View>
 );
 

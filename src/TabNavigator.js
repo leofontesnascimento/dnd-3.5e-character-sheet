@@ -17,7 +17,7 @@ import {
   InventoryScreen
 } from './screens';
 
-import TabBarIcon from './components/TabBarIcon';
+import { TabBarIcon } from './components';
 
 const statusImg = require('./imgs/status.png');
 const statusFocusedImg = require('./imgs/status-focused.png');

@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 
-export default props => (
+const TabBarIcon = props => (
   <View style={styles.container}>
     <Image
       style={styles.icon}
@@ -26,3 +26,5 @@ const styles = StyleSheet.create({
     width: 35
   }
 });
+
+export { TabBarIcon };

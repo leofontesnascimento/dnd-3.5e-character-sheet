@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 
-export default class Skills extends Component {
+class SkillsTab extends Component {
   static navigationOptions = {
     title: 'Skills',
     headerStyle: {
@@ -39,3 +39,5 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   }
 });
+
+export { SkillsTab };

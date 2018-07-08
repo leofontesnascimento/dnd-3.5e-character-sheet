@@ -7,7 +7,7 @@ import {
   View
 } from 'react-native';
 
-export default class Status extends Component {
+class StatusTab extends Component {
   static navigationOptions = {
     title: 'Status',
     headerStyle: {
@@ -47,3 +47,5 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   }
 });
+
+export { StatusTab };

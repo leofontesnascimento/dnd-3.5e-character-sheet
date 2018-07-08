@@ -5,12 +5,15 @@ import {
   StackNavigator
 } from 'react-navigation';
 
-import AbillityScoresTab from './tabs/AbillityScoresTab';
-import AttacksTab from './tabs/AttacksTab';
+import {
+  AbillityScoresTab,
+  AttacksTab,
+  SkillsTab,
+  StatusTab
+} from './tabs';
+
 import CharacterScreen from './screens/CharacterScreen';
 import InventoryScreen from './screens/InventoryScreen';
-import SkillsTab from './tabs/SkillsTab';
-import StatusTab from './tabs/StatusTab';
 
 import TabBarIcon from './components/TabBarIcon';
 

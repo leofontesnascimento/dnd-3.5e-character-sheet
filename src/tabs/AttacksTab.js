@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 
-export default class Attacks extends Component {
+class AttacksTab extends Component {
   static navigationOptions = {
     title: 'Attacks',
     headerStyle: {
@@ -39,3 +39,5 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   }
 });
+
+export { AttacksTab };

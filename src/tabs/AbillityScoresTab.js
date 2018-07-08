@@ -7,7 +7,7 @@ import {
   View
 } from 'react-native';
 
-export default class AbillityScores extends Component {
+class AbillityScoresTab extends Component {
   static navigationOptions = {
     title: 'Abillity Scores',
     headerStyle: {
@@ -47,3 +47,5 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   }
 });
+
+export { AbillityScoresTab };

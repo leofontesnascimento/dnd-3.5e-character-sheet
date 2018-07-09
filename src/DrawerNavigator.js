@@ -1,21 +1,11 @@
-import React from 'react';
-
 import {
-  createDrawerNavigator,
-  StackNavigator
+  createDrawerNavigator
 } from 'react-navigation';
 
 import CharacterTabsNavigator from './CharacterTabsNavigator';
-
-import {
-  InventoryScreen
-} from './screens';
-
-const InventoryStack = StackNavigator({
-  Inventory: { screen: InventoryScreen }
-});
+import InventoryTabsNavigator from './InventoryTabsNavigator';
 
 export default createDrawerNavigator({
   Character: { screen: CharacterTabsNavigator },
-  Inventory: { screen: InventoryStack }
+  Inventory: { screen: InventoryTabsNavigator }
 });

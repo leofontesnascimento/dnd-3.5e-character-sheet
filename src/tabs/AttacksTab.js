@@ -8,7 +8,7 @@ import {
 
 class AttacksTab extends Component {
   static navigationOptions = {
-    title: 'Attacks',
+    title: 'Character',
     headerStyle: {
       backgroundColor: '#FA6900',
     },

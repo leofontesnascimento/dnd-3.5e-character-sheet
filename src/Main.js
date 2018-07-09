@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TabNavigator from './TabNavigator';
+import DrawerNavigator from './DrawerNavigator';
 
 export default props => (
-  <TabNavigator />
+  <DrawerNavigator />
 );

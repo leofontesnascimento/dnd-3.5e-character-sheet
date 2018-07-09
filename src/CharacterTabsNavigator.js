@@ -12,11 +12,6 @@ import {
   StatusTab
 } from './tabs';
 
-import {
-  CharacterScreen,
-  InventoryScreen
-} from './screens';
-
 import { TabBarIcon } from './components';
 
 const statusImg = require('./imgs/status.png');
@@ -29,17 +24,15 @@ const attacksImg = require('./imgs/attacks.png');
 const attacksFocusedImg = require('./imgs/attacks-focused.png');
 
 const StatusStack = StackNavigator({
-  Status: { screen: StatusTab },
-  Character: { screen: CharacterScreen }
+  StatusTab: { screen: StatusTab }
 });
 
 const AbillityStack = StackNavigator({
-  Abillity: { screen: AbillityScoresTab },
-  Inventory: { screen: InventoryScreen }
+  AbillityTab: { screen: AbillityScoresTab }
 });
 
 const SkillsStack = StackNavigator({
-  Skills: { screen: SkillsTab }
+  SkillsTab: { screen: SkillsTab }
 });
 
 const AttacksStack = StackNavigator({

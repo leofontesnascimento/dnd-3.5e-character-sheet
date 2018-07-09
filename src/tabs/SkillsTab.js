@@ -8,7 +8,7 @@ import {
 
 class SkillsTab extends Component {
   static navigationOptions = {
-    title: 'Skills',
+    title: 'Character',
     headerStyle: {
       backgroundColor: '#FA6900',
     },

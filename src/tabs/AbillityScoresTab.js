@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import {
-  Button,
   StyleSheet,
   Text,
   View
@@ -9,7 +8,7 @@ import {
 
 class AbillityScoresTab extends Component {
   static navigationOptions = {
-    title: 'Abillity Scores',
+    title: 'Character',
     headerStyle: {
       backgroundColor: '#FA6900',
     },
@@ -23,13 +22,6 @@ class AbillityScoresTab extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.txtTab}>Abillity Scores Tab</Text>
-        <Button
-          title='Go to Inventory'
-          onPress={() => {
-            this.props.navigation.navigate('Inventory');
-          }}
-          color='#F96A26'
-        />
       </View>
     );
   }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import {
-  Button,
   StyleSheet,
   Text,
   View
@@ -9,7 +8,7 @@ import {
 
 class StatusTab extends Component {
   static navigationOptions = {
-    title: 'Status',
+    title: 'Character',
     headerStyle: {
       backgroundColor: '#FA6900',
     },
@@ -23,13 +22,6 @@ class StatusTab extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.txtTab}>Status Tab</Text>
-        <Button
-          title='Go to Character'
-          onPress={() => {
-            this.props.navigation.navigate('Character');
-          }}
-          color='#F96A26'
-        />
       </View>
     );
   }

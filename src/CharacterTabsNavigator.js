@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   createBottomTabNavigator,
-  StackNavigator
+  createStackNavigator
 } from 'react-navigation';
 
 import {
@@ -23,20 +23,20 @@ const skillsFocusedImg = require('./imgs/skills-focused.png');
 const attacksImg = require('./imgs/attacks.png');
 const attacksFocusedImg = require('./imgs/attacks-focused.png');
 
-const StatusStack = StackNavigator({
+const StatusStack = createStackNavigator({
   StatusTab: { screen: StatusTab }
 });
 
-const AbillityStack = StackNavigator({
+const AbillityStack = createStackNavigator({
   AbillityTab: { screen: AbillityScoresTab }
 });
 
-const SkillsStack = StackNavigator({
+const SkillsStack = createStackNavigator({
   SkillsTab: { screen: SkillsTab }
 });
 
-const AttacksStack = StackNavigator({
-  Attacks: { screen: AttacksTab }
+const AttacksStack = createStackNavigator({
+  AttacksTab: { screen: AttacksTab }
 });
 
 export default createBottomTabNavigator(

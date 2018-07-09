@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   createBottomTabNavigator,
-  StackNavigator
+  createStackNavigator
 } from 'react-navigation';
 
 import { InventoryTab } from './tabs';
@@ -12,7 +12,7 @@ import { TabBarIcon } from './components';
 const inventoryImg = require('./imgs/inventory.png');
 const inventoryFocusedImg = require('./imgs/inventory-focused.png');
 
-const InventoryStack = StackNavigator({
+const InventoryStack = createStackNavigator({
   InventoryTab: { screen: InventoryTab }
 });
 

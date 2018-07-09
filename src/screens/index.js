@@ -1,1 +1,1 @@
-export * from './InventoryScreen';
+export * from './FooScreen';

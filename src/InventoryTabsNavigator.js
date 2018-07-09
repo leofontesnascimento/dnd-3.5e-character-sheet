@@ -7,13 +7,16 @@ import {
 
 import { InventoryTab } from './tabs';
 
+import { FooScreen } from './screens';
+
 import { TabBarIcon } from './components';
 
 const inventoryImg = require('./imgs/inventory.png');
 const inventoryFocusedImg = require('./imgs/inventory-focused.png');
 
 const InventoryStack = createStackNavigator({
-  InventoryTab: { screen: InventoryTab }
+  InventoryTab: { screen: InventoryTab },
+  FooScreen: { screen: FooScreen }
 });
 
 export default createBottomTabNavigator(

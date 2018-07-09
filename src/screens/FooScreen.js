@@ -6,9 +6,9 @@ import {
   View
 } from 'react-native';
 
-class InventoryScreen extends Component {
+class FooScreen extends Component {
   static navigationOptions = {
-    title: 'Inventory',
+    title: 'Foo',
     headerStyle: {
       backgroundColor: '#FA6900',
     },
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export { InventoryScreen };
+export { FooScreen };

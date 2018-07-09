@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import {
+  Button,
   StyleSheet,
   Text,
   View
@@ -22,6 +23,13 @@ class InventoryTab extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.txtTab}>Inventory Tab</Text>
+        <Button
+          title='Go to Foo Screen'
+          color='#FA6900'
+          onPress={() => {
+            this.props.navigation.navigate('FooScreen');
+          }}
+        />
       </View>
     );
   }

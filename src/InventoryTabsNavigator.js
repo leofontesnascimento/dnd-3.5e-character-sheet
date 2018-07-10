@@ -9,15 +9,34 @@ import { InventoryTab } from './tabs';
 
 import { FooScreen } from './screens';
 
-import { TabBarIcon } from './components';
+import {
+  MenuIcon,
+  TabBarIcon
+} from './components';
 
 const inventoryImg = require('./imgs/inventory.png');
 const inventoryFocusedImg = require('./imgs/inventory-focused.png');
 
-const InventoryStack = createStackNavigator({
-  InventoryTab: { screen: InventoryTab },
-  FooScreen: { screen: FooScreen }
+const tabsNavigationOptions = ({ navigation }) => ({
+  headerStyle: {
+    backgroundColor: '#FA6900',
+  },
+  headerTintColor: '#FFF',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+  },
+  headerLeft: <MenuIcon navigation={navigation} />,
 });
+
+const InventoryStack = createStackNavigator(
+  {
+    InventoryTab: {
+      screen: InventoryTab,
+      navigationOptions: tabsNavigationOptions
+    },
+    FooScreen: { screen: FooScreen }
+  }
+);
 
 export default createBottomTabNavigator(
   {

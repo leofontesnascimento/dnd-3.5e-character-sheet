@@ -10,13 +10,6 @@ import {
 class AbillityScoresTab extends Component {
   static navigationOptions = {
     title: 'Character',
-    headerStyle: {
-      backgroundColor: '#FA6900',
-    },
-    headerTintColor: '#FFF',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    }
   };
 
   render() {

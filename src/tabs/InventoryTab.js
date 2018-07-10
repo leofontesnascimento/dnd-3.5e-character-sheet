@@ -10,13 +10,6 @@ import {
 class InventoryTab extends Component {
   static navigationOptions = {
     title: 'Inventory',
-    headerStyle: {
-      backgroundColor: '#FA6900',
-    },
-    headerTintColor: '#FFF',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    }
   };
 
   render() {

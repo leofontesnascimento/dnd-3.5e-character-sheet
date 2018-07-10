@@ -14,7 +14,10 @@ import {
 
 import { FooScreen } from './screens';
 
-import { TabBarIcon } from './components';
+import {
+  MenuIcon,
+  TabBarIcon
+} from './components';
 
 const statusImg = require('./imgs/status.png');
 const statusFocusedImg = require('./imgs/status-focused.png');
@@ -25,27 +28,56 @@ const skillsFocusedImg = require('./imgs/skills-focused.png');
 const attacksImg = require('./imgs/attacks.png');
 const attacksFocusedImg = require('./imgs/attacks-focused.png');
 
+const tabsNavigationOptions = ({ navigation }) => ({
+  headerStyle: {
+    backgroundColor: '#FA6900',
+  },
+  headerTintColor: '#FFF',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+  },
+  headerLeft: <MenuIcon navigation={navigation} />,
+});
+
 const StatusStack = createStackNavigator(
   {
-    StatusTab: { screen: StatusTab },
+    StatusTab: {
+      screen: StatusTab,
+      navigationOptions: tabsNavigationOptions
+    },
     FooScreen: { screen: FooScreen }
   }
 );
 
-const AbillityStack = createStackNavigator({
-  AbillityTab: { screen: AbillityScoresTab },
-  FooScreen: { screen: FooScreen }
-});
+const AbillityStack = createStackNavigator(
+  {
+    AbillityTab: {
+      screen: AbillityScoresTab,
+      navigationOptions: tabsNavigationOptions
+    },
+    FooScreen: { screen: FooScreen }
+  }
+);
 
-const SkillsStack = createStackNavigator({
-  SkillsTab: { screen: SkillsTab },
-  FooScreen: { screen: FooScreen }
-});
+const SkillsStack = createStackNavigator(
+  {
+    SkillsTab: {
+      screen: SkillsTab,
+      navigationOptions: tabsNavigationOptions
+    },
+    FooScreen: { screen: FooScreen }
+  }
+);
 
-const AttacksStack = createStackNavigator({
-  AttacksTab: { screen: AttacksTab },
-  FooScreen: { screen: FooScreen }
-});
+const AttacksStack = createStackNavigator(
+  {
+    AttacksTab: {
+      screen: AttacksTab,
+      navigationOptions: tabsNavigationOptions
+    },
+    FooScreen: { screen: FooScreen }
+  }
+);
 
 export default createBottomTabNavigator(
   {

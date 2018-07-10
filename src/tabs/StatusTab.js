@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 
 import {
-  Button,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+
+import {
+  SectionHeader,
+  StatusClass,
+  StatusExperience,
+  StatusHitPoints,
+  StatusRace
+} from '../components';
 
 class StatusTab extends Component {
   static navigationOptions = {
@@ -15,14 +22,42 @@ class StatusTab extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.txtTab}>Status Tab</Text>
-        <Button
-          title='Go to Foo Screen'
-          color='#FA6900'
-          onPress={() => {
-            this.props.navigation.navigate('FooScreen');
-          }}
-        />
+        <View style={styles.status}>
+          <View style={styles.header}>
+            <SectionHeader title='Status' />
+          </View>
+          <View style={styles.content}>
+            <StatusHitPoints
+              current='17'
+              total='17'
+            />
+            <StatusClass
+              charClass='Cleric'
+              lvl='1'
+            />
+            <StatusRace
+              race='Dwarf'
+              hitDice='1d8'
+            />
+            <StatusExperience
+              current='150'
+              total='300'
+            />
+          </View>
+        </View>
+        <View style={styles.combat}>
+          <View style={styles.header}>
+            <SectionHeader title='Combat' />
+          </View>
+          <View style={styles.content}>
+            <Text
+              style={{
+                marginLeft: 15,
+                marginRight: 15
+              }}
+            >Combat Content</Text>
+          </View>
+        </View>
       </View>
     );
   }
@@ -31,13 +66,20 @@ class StatusTab extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF'
   },
-  txtTab: {
-    fontSize: 20,
-    textAlign: 'center'
+  status: {
+    flex: 1
+  },
+  combat: {
+    flex: 1
+  },
+  header: {
+    flex: 1,
+    padding: 15
+  },
+  content: {
+    flex: 12
   }
 });
 

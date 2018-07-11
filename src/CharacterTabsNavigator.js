@@ -14,6 +14,8 @@ import {
 
 import { FooScreen } from './screens';
 
+import { HitPointsModal } from './modals';
+
 import {
   MenuIcon,
   TabBarIcon
@@ -44,8 +46,7 @@ const StatusStack = createStackNavigator(
     StatusTab: {
       screen: StatusTab,
       navigationOptions: tabsNavigationOptions
-    },
-    FooScreen: { screen: FooScreen }
+    }
   }
 );
 
@@ -79,9 +80,31 @@ const AttacksStack = createStackNavigator(
   }
 );
 
+const StatusModalStack = createStackNavigator(
+  {
+    StatusStack,
+    HitPointsModal
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none'
+  }
+);
+
+StatusModalStack.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible,
+  };
+};
+
 export default createBottomTabNavigator(
   {
-    Status: StatusStack,
+    Status: StatusModalStack,
     Abillity: AbillityStack,
     Skills: SkillsStack,
     Attacks: AttacksStack

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import {
   StyleSheet,
+  TouchableOpacity,
   View
 } from 'react-native';
 
@@ -28,10 +29,19 @@ class StatusTab extends Component {
             <SectionHeader title='Status' />
           </View>
           <View style={styles.content}>
-            <StatusHitPoints
-              current='17'
-              total='17'
-            />
+            <TouchableOpacity
+              style={{
+                flex: 3
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate('HitPointsModal');
+              }}
+            >
+              <StatusHitPoints
+                current='17'
+                total='17'
+              />
+            </TouchableOpacity>
             <StatusClass
               charClass='Cleric'
               lvl='1'

@@ -12,6 +12,7 @@ const LargeLabel = props => (
 const styles = StyleSheet.create({
   txtLargeLabel: {
     fontSize: 20,
+    textAlign: 'center',
     fontWeight: 'bold'
   }
 });

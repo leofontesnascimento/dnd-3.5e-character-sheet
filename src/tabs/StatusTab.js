@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 import {
   StyleSheet,
-  Text,
   View
 } from 'react-native';
 
 import {
+  CombatBaseAttack,
+  CombatInitiative,
   SectionHeader,
   StatusClass,
   StatusExperience,
@@ -50,12 +51,18 @@ class StatusTab extends Component {
             <SectionHeader title='Combat' />
           </View>
           <View style={styles.content}>
-            <Text
-              style={{
-                marginLeft: 15,
-                marginRight: 15
-              }}
-            >Combat Content</Text>
+            <CombatInitiative
+              initiative='2'
+              armorClass='12'
+              speed='30'
+              grappleModifier='5'
+            />
+            <CombatBaseAttack
+              baseAttackBonus='5'
+              touchArmorClass='10'
+              flatFootedArmorClass='8'
+              spellResistence='9'
+            />
           </View>
         </View>
       </View>
@@ -69,7 +76,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   status: {
-    flex: 1
+    flex: 1.3
   },
   combat: {
     flex: 1

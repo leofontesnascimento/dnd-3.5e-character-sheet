@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
   },
   viewLabel: {
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: 30
   },
   viewValue: {
     backgroundColor: '#FFF',

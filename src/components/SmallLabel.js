@@ -12,6 +12,7 @@ const SmallLabel = props => (
 const styles = StyleSheet.create({
   txtLabel: {
     fontSize: 12,
+    textAlign: 'center'
   }
 });
 

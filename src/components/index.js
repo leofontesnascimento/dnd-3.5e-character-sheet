@@ -1,3 +1,5 @@
+export * from './CombatBaseAttack';
+export * from './CombatInitiative';
 export * from './Label';
 export * from './LargeLabel';
 export * from './MenuIcon';

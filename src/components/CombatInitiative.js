@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   StyleSheet,
+  TouchableOpacity,
   View
 } from 'react-native';
 
@@ -9,12 +10,17 @@ import { Status } from '../components';
 
 const CombatInitiative = props => (
   <View style={styles.container}>
-    <View style={styles.viewStatus}>
+    <TouchableOpacity
+      style={styles.viewStatus}
+      onLongPress={() => {
+        props.navigation.navigate('InitiativeModal');
+      }}
+    >
       <Status
         label='Initiative'
         value={props.initiative}
       />
-    </View>
+    </TouchableOpacity>
     <View style={styles.viewStatus}>
       <Status
         label='Armor Class'

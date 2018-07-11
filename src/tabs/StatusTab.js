@@ -93,6 +93,7 @@ class StatusTab extends Component {
               armorClass='12'
               speed='30'
               grappleModifier='5'
+              navigation={this.props.navigation}
             />
             <CombatBaseAttack
               baseAttackBonus='5'

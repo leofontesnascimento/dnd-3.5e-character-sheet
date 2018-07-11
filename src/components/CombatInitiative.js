@@ -32,12 +32,17 @@ const CombatInitiative = props => (
         value={props.armorClass}
       />
     </TouchableOpacity>
-    <View style={styles.viewStatus}>
+    <TouchableOpacity
+      style={styles.viewStatus}
+      onLongPress={() => {
+        props.navigation.navigate('SpeedModal');
+      }}
+    >
       <Status
         label='Speed'
         value={props.speed}
       />
-    </View>
+    </TouchableOpacity>
     <View style={styles.viewStatus}>
       <Status
         label='Grapple'

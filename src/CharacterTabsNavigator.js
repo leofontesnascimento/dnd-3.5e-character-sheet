@@ -15,6 +15,7 @@ import {
 import { FooScreen } from './screens';
 
 import {
+  ArmorClassModal,
   ClassModal,
   ExperienceModal,
   HitPointsModal,
@@ -93,7 +94,8 @@ const StatusModalStack = createStackNavigator(
     ClassModal,
     RaceModal,
     ExperienceModal,
-    InitiativeModal
+    InitiativeModal,
+    ArmorClassModal
   },
   {
     mode: 'modal',

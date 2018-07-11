@@ -21,12 +21,17 @@ const CombatInitiative = props => (
         value={props.initiative}
       />
     </TouchableOpacity>
-    <View style={styles.viewStatus}>
+    <TouchableOpacity
+      style={styles.viewStatus}
+      onLongPress={() => {
+        props.navigation.navigate('ArmorClassModal');
+      }}
+    >
       <Status
         label='Armor Class'
         value={props.armorClass}
       />
-    </View>
+    </TouchableOpacity>
     <View style={styles.viewStatus}>
       <Status
         label='Speed'

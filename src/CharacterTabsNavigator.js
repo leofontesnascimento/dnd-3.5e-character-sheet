@@ -16,6 +16,7 @@ import { FooScreen } from './screens';
 
 import {
   ClassModal,
+  ExperienceModal,
   HitPointsModal,
   RaceModal
 } from './modals';
@@ -89,7 +90,8 @@ const StatusModalStack = createStackNavigator(
     StatusStack,
     HitPointsModal,
     ClassModal,
-    RaceModal
+    RaceModal,
+    ExperienceModal
   },
   {
     mode: 'modal',

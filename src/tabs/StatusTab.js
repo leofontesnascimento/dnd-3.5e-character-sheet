@@ -31,7 +31,7 @@ class StatusTab extends Component {
           <View style={styles.content}>
             <TouchableOpacity
               style={{
-                flex: 3
+                flex: 2
               }}
               onLongPress={() => {
                 this.props.navigation.navigate('HitPointsModal');
@@ -44,7 +44,7 @@ class StatusTab extends Component {
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                flex: 3
+                flex: 2
               }}
               onLongPress={() => {
                 this.props.navigation.navigate('ClassModal');
@@ -57,7 +57,7 @@ class StatusTab extends Component {
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                flex: 3
+                flex: 2
               }}
               onLongPress={() => {
                 this.props.navigation.navigate('RaceModal');
@@ -68,10 +68,19 @@ class StatusTab extends Component {
                 hitDice='1d8'
               />
             </TouchableOpacity>
-            <StatusExperience
-              current='150'
-              total='300'
-            />
+            <TouchableOpacity
+              style={{
+                flex: 1
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate('ExperienceModal');
+              }}
+            >
+              <StatusExperience
+                current='150'
+                total='300'
+              />
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.combat}>

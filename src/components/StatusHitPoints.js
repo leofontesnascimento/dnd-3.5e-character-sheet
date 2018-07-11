@@ -62,7 +62,6 @@ const StatusHitPoints = props => (
 
 const styles = StyleSheet.create({
   container: {
-    flex: 3,
     justifyContent: 'center',
     marginLeft: 15,
     marginRight: 15

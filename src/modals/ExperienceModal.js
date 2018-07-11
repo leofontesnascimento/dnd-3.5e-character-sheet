@@ -11,18 +11,18 @@ import {
   LargeLabel
 } from '../components';
 
-const HitPointsModal = props => (
+const ExperienceModal = props => (
   <View style={styles.container}>
-    <LargeLabel label='Set your hit points' />
+    <LargeLabel label='Set your experience points' />
     <StatusInput
       number
       label='Current'
-      value='17'
+      value='150'
     />
     <StatusInput
       number
       label='Total'
-      value='17'
+      value='300'
     />
     <View style={styles.viewFooter}>
       <View style={styles.viewButton}>
@@ -68,4 +68,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export { HitPointsModal };
+export { ExperienceModal };

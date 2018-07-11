@@ -55,10 +55,19 @@ class StatusTab extends Component {
               lvl='1'
               />
             </TouchableOpacity>
-            <StatusRace
-              race='Dwarf'
-              hitDice='1d8'
-            />
+            <TouchableOpacity
+              style={{
+                flex: 3
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate('RaceModal');
+              }}
+            >
+              <StatusRace
+                race='Dwarf'
+                hitDice='1d8'
+              />
+            </TouchableOpacity>
             <StatusExperience
               current='150'
               total='300'

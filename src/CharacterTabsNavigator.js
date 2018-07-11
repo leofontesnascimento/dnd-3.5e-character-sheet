@@ -25,6 +25,7 @@ import {
   InitiativeModal,
   RaceModal,
   SpeedModal,
+  SpellResistenceModal,
   TouchACModal
 } from './modals';
 
@@ -105,7 +106,8 @@ const StatusModalStack = createStackNavigator(
     GrappleModal,
     BaseAttackModal,
     TouchACModal,
-    FlatFootedACModal
+    FlatFootedACModal,
+    SpellResistenceModal
   },
   {
     mode: 'modal',

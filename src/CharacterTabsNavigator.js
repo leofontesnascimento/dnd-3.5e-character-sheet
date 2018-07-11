@@ -18,6 +18,7 @@ import {
   ArmorClassModal,
   ClassModal,
   ExperienceModal,
+  GrappleModal,
   HitPointsModal,
   InitiativeModal,
   RaceModal,
@@ -97,7 +98,8 @@ const StatusModalStack = createStackNavigator(
     ExperienceModal,
     InitiativeModal,
     ArmorClassModal,
-    SpeedModal
+    SpeedModal,
+    GrappleModal
   },
   {
     mode: 'modal',

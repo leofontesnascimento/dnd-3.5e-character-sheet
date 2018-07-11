@@ -14,7 +14,10 @@ import {
 
 import { FooScreen } from './screens';
 
-import { HitPointsModal } from './modals';
+import {
+  ClassModal,
+  HitPointsModal
+} from './modals';
 
 import {
   MenuIcon,
@@ -83,7 +86,8 @@ const AttacksStack = createStackNavigator(
 const StatusModalStack = createStackNavigator(
   {
     StatusStack,
-    HitPointsModal
+    HitPointsModal,
+    ClassModal
   },
   {
     mode: 'modal',

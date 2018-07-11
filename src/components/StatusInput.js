@@ -59,7 +59,15 @@ const StatusInput = props => {
         <SmallLabel label={props.label} />
       </View>
       <View style={styles.viewValue}>
-        <TextIn value={props.value} />
+        <View style={{ flexDirection: 'row' }}>
+          <View
+            style={{
+              width: '100%'
+            }}
+          >
+            <TextIn value={props.value} />
+          </View>
+        </View>
       </View>
     </View>
   );

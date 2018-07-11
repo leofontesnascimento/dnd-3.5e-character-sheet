@@ -14,6 +14,7 @@ const TextIn = props => (
 
 const styles = StyleSheet.create({
   inpText: {
+    height: 38,
     fontSize: 15,
     textAlign: 'center',
     fontWeight: 'bold'

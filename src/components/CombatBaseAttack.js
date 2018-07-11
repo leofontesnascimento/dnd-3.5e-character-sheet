@@ -32,12 +32,17 @@ const CombatBaseAttack = props => (
         value={props.touchArmorClass}
       />
     </TouchableOpacity>
-    <View style={styles.viewStatus}>
+    <TouchableOpacity
+      style={styles.viewStatus}
+      onLongPress={() => {
+        props.navigation.navigate('FlatFootedACModal');
+      }}
+    >
       <Status
         label='Flat-Footed AC'
         value={props.flatFootedArmorClass}
       />
-    </View>
+    </TouchableOpacity>
     <View style={styles.viewStatus}>
       <Status
         label='Spell Resistence'

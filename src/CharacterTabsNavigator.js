@@ -19,6 +19,7 @@ import {
   BaseAttackModal,
   ClassModal,
   ExperienceModal,
+  FlatFootedACModal,
   GrappleModal,
   HitPointsModal,
   InitiativeModal,
@@ -103,7 +104,8 @@ const StatusModalStack = createStackNavigator(
     SpeedModal,
     GrappleModal,
     BaseAttackModal,
-    TouchACModal
+    TouchACModal,
+    FlatFootedACModal
   },
   {
     mode: 'modal',

@@ -23,7 +23,8 @@ import {
   HitPointsModal,
   InitiativeModal,
   RaceModal,
-  SpeedModal
+  SpeedModal,
+  TouchACModal
 } from './modals';
 
 import {
@@ -101,7 +102,8 @@ const StatusModalStack = createStackNavigator(
     ArmorClassModal,
     SpeedModal,
     GrappleModal,
-    BaseAttackModal
+    BaseAttackModal,
+    TouchACModal
   },
   {
     mode: 'modal',

@@ -100,6 +100,7 @@ class StatusTab extends Component {
               touchArmorClass='10'
               flatFootedArmorClass='8'
               spellResistence='9'
+              navigation={this.props.navigation}
             />
           </View>
         </View>

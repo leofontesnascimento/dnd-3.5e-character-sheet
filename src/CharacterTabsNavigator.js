@@ -16,6 +16,7 @@ import { FooScreen } from './screens';
 
 import {
   ArmorClassModal,
+  BaseAttackModal,
   ClassModal,
   ExperienceModal,
   GrappleModal,
@@ -99,7 +100,8 @@ const StatusModalStack = createStackNavigator(
     InitiativeModal,
     ArmorClassModal,
     SpeedModal,
-    GrappleModal
+    GrappleModal,
+    BaseAttackModal
   },
   {
     mode: 'modal',

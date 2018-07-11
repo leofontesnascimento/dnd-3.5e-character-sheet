@@ -1,4 +1,5 @@
 export * from './ArmorClassModal';
+export * from './BaseAttackModal';
 export * from './ClassModal';
 export * from './ExperienceModal';
 export * from './GrappleModal';

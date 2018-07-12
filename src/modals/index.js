@@ -1,3 +1,4 @@
+export * from './AbillityScoreModal';
 export * from './ArmorClassModal';
 export * from './BaseAttackModal';
 export * from './ClassModal';

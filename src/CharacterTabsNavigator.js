@@ -15,6 +15,7 @@ import {
 import { FooScreen } from './screens';
 
 import {
+  AbillityScoreModal,
   ArmorClassModal,
   BaseAttackModal,
   ClassModal,
@@ -107,7 +108,8 @@ const StatusModalStack = createStackNavigator(
     BaseAttackModal,
     TouchACModal,
     FlatFootedACModal,
-    SpellResistenceModal
+    SpellResistenceModal,
+    AbillityScoreModal
   },
   {
     mode: 'modal',

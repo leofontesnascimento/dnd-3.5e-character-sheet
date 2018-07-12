@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import {
   StyleSheet,
+  TouchableOpacity,
   View
 } from 'react-native';
 
@@ -36,42 +37,126 @@ class AbillityScoresTab extends Component {
             </View>
           </View>
           <View style={styles.viewScores}>
-            <AbillityScore
-              acronym='STR'
-              abillity='Strength'
-              score='10'
-              modifier='0'
-            />
-            <AbillityScore
-              acronym='DEX'
-              abillity='Dexterity'
-              score='10'
-              modifier='0'
-            />
-            <AbillityScore
-              acronym='CON'
-              abillity='Constitution'
-              score='10'
-              modifier='0'
-            />
-            <AbillityScore
-              acronym='INT'
-              abillity='Intelligence'
-              score='10'
-              modifier='0'
-            />
-            <AbillityScore
-              acronym='WIS'
-              abillity='Wisdom'
-              score='10'
-              modifier='0'
-            />
-            <AbillityScore
-              acronym='CHA'
-              abillity='Charisma'
-              score='10'
-              modifier='0'
-            />
+            <TouchableOpacity
+              style={{
+                flex: 1
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate(
+                  'AbillityScoreModal',
+                  {
+                    abillityName: 'Strength'
+                  }
+                );
+              }}
+            >
+              <AbillityScore
+                acronym='STR'
+                abillity='Strength'
+                score='10'
+                modifier='0'
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flex: 1
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate(
+                  'AbillityScoreModal',
+                  {
+                    abillityName: 'Dexterity'
+                  }
+                );
+              }}
+            >
+              <AbillityScore
+                acronym='DEX'
+                abillity='Dexterity'
+                score='10'
+                modifier='0'
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flex: 1
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate(
+                  'AbillityScoreModal',
+                  {
+                    abillityName: 'Constitution'
+                  }
+                );
+              }}
+            >
+              <AbillityScore
+                acronym='CON'
+                abillity='Constitution'
+                score='10'
+                modifier='0'
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flex: 1
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate(
+                  'AbillityScoreModal',
+                  {
+                    abillityName: 'Intelligence'
+                  }
+                );
+              }}
+            >
+              <AbillityScore
+                acronym='INT'
+                abillity='Intelligence'
+                score='10'
+                modifier='0'
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flex: 1
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate(
+                  'AbillityScoreModal',
+                  {
+                    abillityName: 'Wisdom'
+                  }
+                );
+              }}
+            >
+              <AbillityScore
+                acronym='WIS'
+                abillity='Wisdom'
+                score='10'
+                modifier='0'
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flex: 1
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate(
+                  'AbillityScoreModal',
+                  {
+                    abillityName: 'Charisma'
+                  }
+                );
+              }}
+            >
+              <AbillityScore
+                acronym='CHA'
+                abillity='Charisma'
+                score='10'
+                modifier='0'
+              />
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.savingThrows}>

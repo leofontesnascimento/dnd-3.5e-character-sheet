@@ -1,3 +1,4 @@
+export * from './AbillityScore';
 export * from './CombatBaseAttack';
 export * from './CombatInitiative';
 export * from './Label';

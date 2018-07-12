@@ -175,21 +175,63 @@ class AbillityScoresTab extends Component {
             </View>
           </View>
           <View style={styles.viewSavings}>
-            <SavingThrow
-              saving='Fortitude'
-              abillityAcronym='CON'
-              score='3'
-            />
-            <SavingThrow
-              saving='Reflex'
-              abillityAcronym='DEX'
-              score='4'
-            />
-            <SavingThrow
-              saving='Will'
-              abillityAcronym='WIS'
-              score='5'
-            />
+            <TouchableOpacity
+              style={{
+                flex: 1
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate(
+                  'SavingThrowModal',
+                  {
+                    savingName: 'Fortitude'
+                  }
+                );
+              }}
+            >
+              <SavingThrow
+                saving='Fortitude'
+                abillityAcronym='CON'
+                score='3'
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flex: 1
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate(
+                  'SavingThrowModal',
+                  {
+                    savingName: 'Reflex'
+                  }
+                );
+              }}
+            >
+              <SavingThrow
+                saving='Reflex'
+                abillityAcronym='DEX'
+                score='3'
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flex: 1
+              }}
+              onLongPress={() => {
+                this.props.navigation.navigate(
+                  'SavingThrowModal',
+                  {
+                    savingName: 'Will'
+                  }
+                );
+              }}
+            >
+              <SavingThrow
+                saving='Will'
+                abillityAcronym='WIS'
+                score='3'
+              />
+            </TouchableOpacity>
           </View>
         </View>
       </View>

@@ -25,6 +25,7 @@ import {
   HitPointsModal,
   InitiativeModal,
   RaceModal,
+  SavingThrowModal,
   SpeedModal,
   SpellResistenceModal,
   TouchACModal
@@ -69,8 +70,7 @@ const AbillityStack = createStackNavigator(
     AbillityTab: {
       screen: AbillityScoresTab,
       navigationOptions: tabsNavigationOptions
-    },
-    FooScreen: { screen: FooScreen }
+    }
   }
 );
 
@@ -109,7 +109,8 @@ const StatusModalStack = createStackNavigator(
     TouchACModal,
     FlatFootedACModal,
     SpellResistenceModal,
-    AbillityScoreModal
+    AbillityScoreModal,
+    SavingThrowModal
   },
   {
     mode: 'modal',

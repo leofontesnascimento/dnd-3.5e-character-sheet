@@ -9,24 +9,21 @@ import {
   Label
 } from './Label';
 
-const AbillityScore = props => (
+const SavingThrow = props => (
   <View style={styles.container}>
-    <View style={styles.viewAbillity}>
-      <View style={styles.viewAcronymAbillity}>
-        <Label
-          light
-          label={props.acronym}
-        />
+    <View style={styles.viewSaving}>
+      <View style={styles.viewTitleSaving}>
+        <Label label={props.saving} />
       </View>
-      <View style={styles.viewTitleAbillity}>
-        <Label label={props.abillity} />
-      </View>
+    </View>
+    <View style={styles.viewAbillityAcronym}>
+      <Label
+        light
+        label={props.abillityAcronym}
+      />
     </View>
     <View style={styles.viewScore}>
       <Label label={props.score} />
-    </View>
-    <View style={styles.viewModifier}>
-      <Label label={props.modifier} />
     </View>
   </View>
 );
@@ -38,19 +35,11 @@ const styles = StyleSheet.create({
     paddingTop: 2,
     paddingBottom: 2
   },
-  viewAbillity: {
+  viewSaving: {
     flex: 3,
-    flexDirection: 'row',
     backgroundColor: '#FFF'
   },
-  viewAcronymAbillity: {
-    flex: 1,
-    backgroundColor: '#FA6900',
-    paddingLeft: 5,
-    paddingRight: 5,
-    justifyContent: 'center'
-  },
-  viewTitleAbillity: {
+  viewTitleSaving: {
     flex: 4,
     justifyContent: 'center',
     alignItems: 'flex-start',
@@ -63,13 +52,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     marginLeft: 4
   },
-  viewModifier: {
+  viewAbillityAcronym: {
     flex: 1,
+    backgroundColor: '#FA6900',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFF',
     marginLeft: 4
   }
 });
 
-export { AbillityScore };
+export { SavingThrow };

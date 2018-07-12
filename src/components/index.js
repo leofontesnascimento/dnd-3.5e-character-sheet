@@ -7,6 +7,7 @@ export * from './MenuIcon';
 export * from './NumberIn';
 export * from './SectionHeader';
 export * from './SmallLabel';
+export * from './SavingThrow';
 export * from './Status';
 export * from './StatusClass';
 export * from './StatusExperience';

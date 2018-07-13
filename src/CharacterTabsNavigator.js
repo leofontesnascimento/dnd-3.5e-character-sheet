@@ -79,8 +79,7 @@ const SkillsStack = createStackNavigator(
     SkillsTab: {
       screen: SkillsTab,
       navigationOptions: tabsNavigationOptions
-    },
-    FooScreen: { screen: FooScreen }
+    }
   }
 );
 

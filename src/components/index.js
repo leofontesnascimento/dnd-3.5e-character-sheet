@@ -8,6 +8,7 @@ export * from './NumberIn';
 export * from './SectionHeader';
 export * from './SmallLabel';
 export * from './SavingThrow';
+export * from './Skill';
 export * from './Status';
 export * from './StatusClass';
 export * from './StatusExperience';

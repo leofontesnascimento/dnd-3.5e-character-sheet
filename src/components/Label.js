@@ -8,12 +8,22 @@ import {
 const Label = props => {
   if (props.light) {
     return (
-      <Text style={styles.txtLightLabel}>{props.label}</Text>
+      <Text
+        style={styles.txtLightLabel}
+        numberOfLines={1}
+      >
+        {props.label}
+      </Text>
     );
   }
 
   return (
-    <Text style={styles.txtLabel}>{props.label}</Text>
+    <Text
+      style={styles.txtLabel}
+      numberOfLines={1}
+    >
+      {props.label}
+    </Text>
   );
 };
 

@@ -9,6 +9,7 @@ export * from './HitPointsModal';
 export * from './InitiativeModal';
 export * from './RaceModal';
 export * from './SavingThrowModal';
+export * from './SkillModal';
 export * from './SpeedModal';
 export * from './SpellResistenceModal';
 export * from './TouchACModal';

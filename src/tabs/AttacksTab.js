@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {
   ScrollView,
   StyleSheet,
+  TouchableOpacity,
   View
 } from 'react-native';
 
@@ -26,61 +27,171 @@ class AttacksTab extends Component {
           <View style={styles.viewAttacks}>
             <ScrollView>
               <View style={styles.viewScrollView}>
-                <Attack
-                  name='Orcrist'
-                  weapon='Great Axe'
-                  attackBonus='7'
-                  damage='1d12+8'
-                  critical='x3'
-                  rangeIncrement=' '
-                  type=' '
-                  notes=' '
-                  ammunition=' '
-                />
-                <Attack
-                  name=' '
-                  weapon=' '
-                  attackBonus=' '
-                  damage=' '
-                  critical=' '
-                  rangeIncrement=' '
-                  type=' '
-                  notes=' '
-                  ammunition=' '
-                />
-                <Attack
-                  name=' '
-                  weapon=' '
-                  attackBonus=' '
-                  damage=' '
-                  critical=' '
-                  rangeIncrement=' '
-                  type=' '
-                  notes=' '
-                  ammunition=' '
-                />
-                <Attack
-                  name=' '
-                  weapon=' '
-                  attackBonus=' '
-                  damage=' '
-                  critical=' '
-                  rangeIncrement=' '
-                  type=' '
-                  notes=' '
-                  ammunition=' '
-                />
-                <Attack
-                  name=' '
-                  weapon=' '
-                  attackBonus=' '
-                  damage=' '
-                  critical=' '
-                  rangeIncrement=' '
-                  type=' '
-                  notes=' '
-                  ammunition=' '
-                />
+                <TouchableOpacity
+                  style={{
+                    flex: 1
+                  }}
+                  onLongPress={() => {
+                    this.props.navigation.navigate(
+                      'AttackModal',
+                      {
+                        attackName: 'Orcrist',
+                        weapon: 'Great Axe',
+                        attackBonus: '7',
+                        damage: '1d12+8',
+                        critical: 'x3',
+                        rangeIncrement: ' ',
+                        type: ' ',
+                        notes: ' ',
+                        ammunition: ' '
+                      }
+                    );
+                  }}
+                >
+                  <Attack
+                    name='Orcrist'
+                    weapon='Great Axe'
+                    attackBonus='7'
+                    damage='1d12+8'
+                    critical='x3'
+                    rangeIncrement=' '
+                    type=' '
+                    notes=' '
+                    ammunition=' '
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{
+                    flex: 1
+                  }}
+                  onLongPress={() => {
+                    this.props.navigation.navigate(
+                      'AttackModal',
+                      {
+                        attackName: ' ',
+                        weapon: ' ',
+                        attackBonus: ' ',
+                        damage: ' ',
+                        critical: ' ',
+                        rangeIncrement: ' ',
+                        type: ' ',
+                        notes: ' ',
+                        ammunition: ' '
+                      }
+                    );
+                  }}
+                >
+                  <Attack
+                    name=' '
+                    weapon=' '
+                    attackBonus=' '
+                    damage=' '
+                    critical=' '
+                    rangeIncrement=' '
+                    type=' '
+                    notes=' '
+                    ammunition=' '
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{
+                    flex: 1
+                  }}
+                  onLongPress={() => {
+                    this.props.navigation.navigate(
+                      'AttackModal',
+                      {
+                        attackName: ' ',
+                        weapon: ' ',
+                        attackBonus: ' ',
+                        damage: ' ',
+                        critical: ' ',
+                        rangeIncrement: ' ',
+                        type: ' ',
+                        notes: ' ',
+                        ammunition: ' '
+                      }
+                    );
+                  }}
+                >
+                  <Attack
+                    name=' '
+                    weapon=' '
+                    attackBonus=' '
+                    damage=' '
+                    critical=' '
+                    rangeIncrement=' '
+                    type=' '
+                    notes=' '
+                    ammunition=' '
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{
+                    flex: 1
+                  }}
+                  onLongPress={() => {
+                    this.props.navigation.navigate(
+                      'AttackModal',
+                      {
+                        attackName: ' ',
+                        weapon: ' ',
+                        attackBonus: ' ',
+                        damage: ' ',
+                        critical: ' ',
+                        rangeIncrement: ' ',
+                        type: ' ',
+                        notes: ' ',
+                        ammunition: ' '
+                      }
+                    );
+                  }}
+                >
+                  <Attack
+                    name=' '
+                    weapon=' '
+                    attackBonus=' '
+                    damage=' '
+                    critical=' '
+                    rangeIncrement=' '
+                    type=' '
+                    notes=' '
+                    ammunition=' '
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{
+                    flex: 1
+                  }}
+                  onLongPress={() => {
+                    this.props.navigation.navigate(
+                      'AttackModal',
+                      {
+                        attackName: ' ',
+                        weapon: ' ',
+                        attackBonus: ' ',
+                        damage: ' ',
+                        critical: ' ',
+                        rangeIncrement: ' ',
+                        type: ' ',
+                        notes: ' ',
+                        ammunition: ' '
+                      }
+                    );
+                  }}
+                >
+                  <Attack
+                    name=' '
+                    weapon=' '
+                    attackBonus=' '
+                    damage=' '
+                    critical=' '
+                    rangeIncrement=' '
+                    type=' '
+                    notes=' '
+                    ammunition=' '
+                  />
+                </TouchableOpacity>
               </View>
             </ScrollView>
           </View>

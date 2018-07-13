@@ -15,6 +15,7 @@ import {
 import {
   AbillityScoreModal,
   ArmorClassModal,
+  AttackModal,
   BaseAttackModal,
   ClassModal,
   ExperienceModal,
@@ -108,7 +109,8 @@ const StatusModalStack = createStackNavigator(
     SpellResistenceModal,
     AbillityScoreModal,
     SavingThrowModal,
-    SkillModal
+    SkillModal,
+    AttackModal
   },
   {
     mode: 'modal',

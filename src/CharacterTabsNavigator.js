@@ -12,8 +12,6 @@ import {
   StatusTab
 } from './tabs';
 
-import { FooScreen } from './screens';
-
 import {
   AbillityScoreModal,
   ArmorClassModal,
@@ -89,8 +87,7 @@ const AttacksStack = createStackNavigator(
     AttacksTab: {
       screen: AttacksTab,
       navigationOptions: tabsNavigationOptions
-    },
-    FooScreen: { screen: FooScreen }
+    }
   }
 );
 

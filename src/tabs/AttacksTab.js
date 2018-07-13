@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
 import {
-  Button,
+  ScrollView,
   StyleSheet,
-  Text,
   View
 } from 'react-native';
+
+import {
+  Attack,
+  SectionHeader
+} from '../components';
 
 class AttacksTab extends Component {
   static navigationOptions = {
@@ -15,14 +19,72 @@ class AttacksTab extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.txtTab}>Attacks Tab</Text>
-        <Button
-          title='Go to Foo Screen'
-          color='#FA6900'
-          onPress={() => {
-            this.props.navigation.navigate('FooScreen');
-          }}
-        />
+        <View style={styles.attacks}>
+          <View style={styles.viewHeader}>
+            <SectionHeader title='Attacks' />
+          </View>
+          <View style={styles.viewAttacks}>
+            <ScrollView>
+              <View style={styles.viewScrollView}>
+                <Attack
+                  name='Orcrist'
+                  weapon='Great Axe'
+                  attackBonus='7'
+                  damage='1d12+8'
+                  critical='x3'
+                  rangeIncrement=' '
+                  type=' '
+                  notes=' '
+                  ammunition=' '
+                />
+                <Attack
+                  name=' '
+                  weapon=' '
+                  attackBonus=' '
+                  damage=' '
+                  critical=' '
+                  rangeIncrement=' '
+                  type=' '
+                  notes=' '
+                  ammunition=' '
+                />
+                <Attack
+                  name=' '
+                  weapon=' '
+                  attackBonus=' '
+                  damage=' '
+                  critical=' '
+                  rangeIncrement=' '
+                  type=' '
+                  notes=' '
+                  ammunition=' '
+                />
+                <Attack
+                  name=' '
+                  weapon=' '
+                  attackBonus=' '
+                  damage=' '
+                  critical=' '
+                  rangeIncrement=' '
+                  type=' '
+                  notes=' '
+                  ammunition=' '
+                />
+                <Attack
+                  name=' '
+                  weapon=' '
+                  attackBonus=' '
+                  damage=' '
+                  critical=' '
+                  rangeIncrement=' '
+                  type=' '
+                  notes=' '
+                  ammunition=' '
+                />
+              </View>
+            </ScrollView>
+          </View>
+        </View>
       </View>
     );
   }
@@ -31,14 +93,23 @@ class AttacksTab extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#F5FCFF',
+    paddingBottom: 5
   },
-  txtTab: {
-    fontSize: 20,
-    textAlign: 'center'
-  }
+  attacks: {
+    flex: 1
+  },
+  viewHeader: {
+    flex: 1,
+    padding: 15
+  },
+  viewAttacks: {
+    flex: 18
+  },
+  viewScrollView: {
+    paddingLeft: 15,
+    paddingRight: 15
+  },
 });
 
 export { AttacksTab };

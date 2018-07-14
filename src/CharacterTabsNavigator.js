@@ -8,9 +8,10 @@ import {
 import {
   AbillityScoresTab,
   AttacksTab,
-  SkillsTab,
-  StatusTab
+  SkillsTab
 } from './tabs';
+
+import StatusTab from './tabs/StatusTab';
 
 import {
   AbillityScoreModal,
@@ -21,7 +22,6 @@ import {
   ExperienceModal,
   FlatFootedACModal,
   GrappleModal,
-  HitPointsModal,
   InitiativeModal,
   RaceModal,
   SavingThrowModal,
@@ -30,6 +30,8 @@ import {
   SpellResistenceModal,
   TouchACModal
 } from './modals';
+
+import HitPointsModal from './modals/HitPointsModal';
 
 import {
   MenuIcon,

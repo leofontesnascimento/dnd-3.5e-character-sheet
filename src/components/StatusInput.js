@@ -27,7 +27,16 @@ const StatusInput = props => {
               title='-'
               color='#FA6900'
               onPress={() => {
-                console.log('-1');
+                switch (props.context) {
+                  case 'currentHitPoints':
+                    props.decreaseCurrent();
+                    break;
+                  case 'totalHitPoints':
+                    props.decreaseTotal();
+                    break;
+                  default:
+                    break;
+                }
               }}
             />
           </View>
@@ -36,7 +45,12 @@ const StatusInput = props => {
               <SmallLabel label={props.label} />
             </View>
             <View style={styles.viewValue}>
-              <NumberIn value={props.value} />
+              <NumberIn
+                value={props.value}
+                context={props.context}
+                modifyCurrent={props.modifyCurrent}
+                modifyTotal={props.modifyTotal}
+              />
             </View>
           </View>
           <View style={styles.viewButton}>
@@ -44,7 +58,16 @@ const StatusInput = props => {
               title='+'
               color='#FA6900'
               onPress={() => {
-                console.log('+1');
+                switch (props.context) {
+                  case 'currentHitPoints':
+                    props.increaseCurrent();
+                    break;
+                  case 'totalHitPoints':
+                    props.increaseTotal();
+                    break;
+                  default:
+                    break;
+                }
               }}
             />
           </View>

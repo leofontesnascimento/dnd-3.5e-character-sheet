@@ -29,10 +29,16 @@ const StatusHitPoints = props => (
     >
       <View style={styles.btnHitPoints}>
         <Button
-          title='+'
+          title='-'
           color='#FA6900'
           onPress={() => {
-            console.log('Heal');
+            switch (props.context) {
+              case 'currentHitPoints':
+                props.decreaseCurrent();
+                break;
+              default:
+                break;
+            }
           }}
         />
       </View>
@@ -43,16 +49,22 @@ const StatusHitPoints = props => (
           alignItems: 'center'
         }}
       >
-        <LargeLabel label={props.current} />
+        <LargeLabel label={props.current.toString()} />
         <SmallLabel label=' / ' />
-        <SmallLabel label={props.total} />
+        <SmallLabel label={props.total.toString()} />
       </View>
       <View style={styles.btnHitPoints}>
         <Button
-          title='-'
+          title='+'
           color='#FA6900'
           onPress={() => {
-            console.log('Damage');
+            switch (props.context) {
+              case 'currentHitPoints':
+                props.increaseCurrent();
+                break;
+              default:
+                break;
+            }
           }}
         />
       </View>

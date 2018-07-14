@@ -8,8 +8,20 @@ import {
 const NumberIn = props => (
   <TextInput
     style={styles.inpNumber}
-    value={props.value}
+    value={props.value.toString()}
     keyboardType='numeric'
+    onChangeText={text => {
+      switch (props.context) {
+        case 'currentHitPoints':
+          props.modifyCurrent(text);
+          break;
+        case 'totalHitPoints':
+          props.modifyTotal(text);
+          break;
+        default:
+          break;
+      }
+    }}
   />
 );
 

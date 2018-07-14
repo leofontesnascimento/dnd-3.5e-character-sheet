@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+
 import {
   StyleSheet,
   TouchableOpacity,
@@ -15,6 +17,11 @@ import {
   StatusHitPoints,
   StatusRace
 } from '../components';
+
+import {
+  increaseCurrent,
+  decreaseCurrent
+} from '../actions/HitPointsActions';
 
 class StatusTab extends Component {
   static navigationOptions = {
@@ -38,8 +45,11 @@ class StatusTab extends Component {
               }}
             >
               <StatusHitPoints
-                current='17'
-                total='17'
+                current={this.props.currentHitPoints}
+                total={this.props.totalHitPoints}
+                context='currentHitPoints'
+                increaseCurrent={this.props.increaseCurrent}
+                decreaseCurrent={this.props.decreaseCurrent}
               />
             </TouchableOpacity>
             <TouchableOpacity
@@ -129,4 +139,16 @@ const styles = StyleSheet.create({
   }
 });
 
-export { StatusTab };
+const mapStateToProps = state => (
+  {
+    currentHitPoints: state.HitPointsReducer.current,
+    totalHitPoints: state.HitPointsReducer.total
+  }
+);
+
+const actionCreators = {
+  increaseCurrent,
+  decreaseCurrent
+};
+
+export default connect(mapStateToProps, actionCreators)(StatusTab);

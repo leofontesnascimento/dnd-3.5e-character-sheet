@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import {
   Button,
   StyleSheet,
@@ -11,18 +13,35 @@ import {
   LargeLabel
 } from '../components';
 
+import {
+  increaseCurrent,
+  decreaseCurrent,
+  modifyCurrent,
+  increaseTotal,
+  decreaseTotal,
+  modifyTotal
+} from '../actions/HitPointsActions';
+
 const HitPointsModal = props => (
   <View style={styles.container}>
     <LargeLabel label='Set your hit points' />
     <StatusInput
       number
       label='Current'
-      value='17'
+      value={props.current}
+      context='currentHitPoints'
+      modifyCurrent={props.modifyCurrent}
+      increaseCurrent={props.increaseCurrent}
+      decreaseCurrent={props.decreaseCurrent}
     />
     <StatusInput
       number
       label='Total'
-      value='17'
+      value={props.total}
+      context='totalHitPoints'
+      modifyTotal={props.modifyTotal}
+      increaseTotal={props.increaseTotal}
+      decreaseTotal={props.decreaseTotal}
     />
     <View style={styles.viewFooter}>
       <View style={styles.viewButton}>
@@ -68,4 +87,20 @@ const styles = StyleSheet.create({
   }
 });
 
-export { HitPointsModal };
+const mapStateToProps = state => (
+  {
+    current: state.HitPointsReducer.current,
+    total: state.HitPointsReducer.total
+  }
+);
+
+const actionCreators = {
+  increaseCurrent,
+  decreaseCurrent,
+  modifyCurrent,
+  increaseTotal,
+  decreaseTotal,
+  modifyTotal
+};
+
+export default connect(mapStateToProps, actionCreators)(HitPointsModal);

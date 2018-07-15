@@ -20,13 +20,31 @@ import {
 
 import {
   increaseCurrent,
-  decreaseCurrent
+  decreaseCurrent,
+  modifyCurrent,
+  modifyTotal
 } from '../actions/HitPointsActions';
+
+import {
+  retrieveData
+} from '../storage/Storage';
 
 class StatusTab extends Component {
   static navigationOptions = {
     title: 'Character',
   };
+
+  componentWillMount() {
+    retrieveData('@DnDSuperStore:totalHitPoints')
+      .then((total) => {
+        this.props.modifyTotal(total.toString());
+      });
+
+    retrieveData('@DnDSuperStore:currentHitPoints')
+      .then((current) => {
+        this.props.modifyCurrent(current.toString());
+      });
+  }
 
   render() {
     return (
@@ -148,7 +166,9 @@ const mapStateToProps = state => (
 
 const actionCreators = {
   increaseCurrent,
-  decreaseCurrent
+  decreaseCurrent,
+  modifyCurrent,
+  modifyTotal
 };
 
 export default connect(mapStateToProps, actionCreators)(StatusTab);

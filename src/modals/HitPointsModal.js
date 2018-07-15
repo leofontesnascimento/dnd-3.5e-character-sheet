@@ -22,6 +22,10 @@ import {
   modifyTotal
 } from '../actions/HitPointsActions';
 
+import {
+  storeData
+} from '../storage/Storage';
+
 const HitPointsModal = props => (
   <View style={styles.container}>
     <LargeLabel label='Set your hit points' />
@@ -49,7 +53,6 @@ const HitPointsModal = props => (
           title='Cancel'
           color='#FA6900'
           onPress={() => {
-            console.log('Canceled');
             props.navigation.goBack();
           }}
         />
@@ -59,7 +62,14 @@ const HitPointsModal = props => (
           title='Confirm'
           color='#FA6900'
           onPress={() => {
-            console.log('Confirmed');
+            storeData({
+              key: '@DnDSuperStore:currentHitPoints',
+              value: props.current
+            });
+            storeData({
+              key: '@DnDSuperStore:totalHitPoints',
+              value: props.total
+            });
             props.navigation.goBack();
           }}
         />

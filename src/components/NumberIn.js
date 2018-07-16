@@ -19,7 +19,7 @@ const NumberIn = props => (
           props.modifyTotal(text);
           break;
         case 'classLevel':
-          props.modifyLevel(text);
+          props.modifyClassLevel(text);
           break;
         default:
           break;

@@ -1,27 +1,27 @@
-export const modifyName = (text) => (
+export const modifyClassName = (text) => (
   {
-    type: 'modify_name',
+    type: 'modify_class_name',
     payload: text
   }
 );
 
-export const modifyLevel = (text) => (
+export const modifyClassLevel = (text) => (
   {
-    type: 'modify_level',
+    type: 'modify_class_level',
     payload: text
   }
 );
 
-export const increaseLevel = () => (
+export const increaseClassLevel = () => (
   {
-    type: 'increase_level',
+    type: 'increase_class_level',
     payload: 1
   }
 );
 
-export const decreaseLevel = () => (
+export const decreaseClassLevel = () => (
   {
-    type: 'decrease_level',
+    type: 'decrease_class_level',
     payload: 1
   }
 );

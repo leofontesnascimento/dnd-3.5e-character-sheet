@@ -26,8 +26,8 @@ import {
 } from '../actions/HitPointsActions';
 
 import {
-  modifyName,
-  modifyLevel
+  modifyClassName,
+  modifyClassLevel
 } from '../actions/ClassActions';
 
 import {
@@ -57,12 +57,12 @@ class StatusTab extends Component {
 
     retrieveData('@DnDSuperStore:className')
       .then((name) => {
-        this.props.modifyName(name.toString());
+        this.props.modifyClassName(name.toString());
       });
 
     retrieveData('@DnDSuperStore:classLevel')
       .then((level) => {
-        this.props.modifyLevel(level.toString());
+        this.props.modifyClassLevel(level.toString());
       });
 
     retrieveData('@DnDSuperStore:raceName')
@@ -191,8 +191,8 @@ const mapStateToProps = state => (
   {
     currentHitPoints: state.HitPointsReducer.current,
     totalHitPoints: state.HitPointsReducer.total,
-    className: state.ClassReducer.name,
-    classLevel: state.ClassReducer.level,
+    className: state.ClassReducer.className,
+    classLevel: state.ClassReducer.classLevel,
     raceName: state.RaceReducer.raceName,
     hitDice: state.RaceReducer.hitDice
   }
@@ -203,8 +203,8 @@ const actionCreators = {
   decreaseCurrent,
   modifyCurrent,
   modifyTotal,
-  modifyName,
-  modifyLevel,
+  modifyClassName,
+  modifyClassLevel,
   modifyRaceName,
   modifyHitDice
 };

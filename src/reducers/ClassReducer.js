@@ -1,32 +1,32 @@
 const INITIAL_STATE = {
-  name: ' ',
-  level: 1
+  className: ' ',
+  classLevel: 1
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'modify_name':
+    case 'modify_class_name':
       return {
         ...state,
-        name: action.payload
+        className: action.payload
       };
-    case 'modify_level':
+    case 'modify_class_level':
       return {
         ...state,
-        level:
+        classLevel:
         parseInt(action.payload, 10) > 1
         ? parseInt(action.payload, 10)
         : 1
       };
-    case 'increase_level':
+    case 'increase_class_level':
       return {
         ...state,
-        level: state.level + action.payload
+        classLevel: state.classLevel + action.payload
       };
-    case 'decrease_level':
+    case 'decrease_class_level':
       return {
         ...state,
-        level: state.level > 1 ? state.level - action.payload : 1
+        classLevel: state.classLevel > 1 ? state.classLevel - action.payload : 1
       };
     default:
       return state;

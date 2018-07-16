@@ -14,10 +14,10 @@ import {
 } from '../components';
 
 import {
-  modifyName,
-  modifyLevel,
-  increaseLevel,
-  decreaseLevel
+  modifyClassName,
+  modifyClassLevel,
+  increaseClassLevel,
+  decreaseClassLevel
 } from '../actions/ClassActions';
 
 import {
@@ -26,21 +26,21 @@ import {
 
 const ClassModal = props => (
   <View style={styles.container}>
-    <LargeLabel label='Set your class and level' />
+    <LargeLabel label='Set your class and classLevel' />
     <StatusInput
       label='Class'
-      value={props.name}
+      value={props.className}
       context='className'
-      modifyName={props.modifyName}
+      modifyClassName={props.modifyClassName}
     />
     <StatusInput
       number
       label='Level'
-      value={props.level}
+      value={props.classLevel}
       context='classLevel'
-      modifyLevel={props.modifyLevel}
-      increaseLevel={props.increaseLevel}
-      decreaseLevel={props.decreaseLevel}
+      modifyClassLevel={props.modifyClassLevel}
+      increaseClassLevel={props.increaseClassLevel}
+      decreaseClassLevel={props.decreaseClassLevel}
     />
     <View style={styles.viewFooter}>
       <View style={styles.viewButton}>
@@ -59,11 +59,11 @@ const ClassModal = props => (
           onPress={() => {
             storeData({
               key: '@DnDSuperStore:className',
-              value: props.name
+              value: props.className
             });
             storeData({
               key: '@DnDSuperStore:classLevel',
-              value: props.level
+              value: props.classLevel
             });
             props.navigation.goBack();
           }}
@@ -94,16 +94,16 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => (
   {
-    name: state.ClassReducer.name,
-    level: state.ClassReducer.level
+    className: state.ClassReducer.className,
+    classLevel: state.ClassReducer.classLevel
   }
 );
 
 const actionCreators = {
-  modifyName,
-  modifyLevel,
-  increaseLevel,
-  decreaseLevel
+  modifyClassName,
+  modifyClassLevel,
+  increaseClassLevel,
+  decreaseClassLevel
 };
 
 export default connect(mapStateToProps, actionCreators)(ClassModal);

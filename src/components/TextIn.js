@@ -12,7 +12,7 @@ const TextIn = props => (
     onChangeText={text => {
       switch (props.context) {
         case 'className':
-          props.modifyName(text);
+          props.modifyClassName(text);
           break;
         case 'raceName':
           props.modifyRaceName(text);

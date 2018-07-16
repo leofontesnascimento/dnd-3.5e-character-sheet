@@ -16,7 +16,7 @@ const Class = props => (
     >
       <Status
         label='Class'
-        value={props.charClass}
+        value={props.name}
       />
     </View>
     <View
@@ -27,7 +27,7 @@ const Class = props => (
     >
       <Status
         label='Level'
-        value={props.lvl}
+        value={props.level}
       />
     </View>
   </View>

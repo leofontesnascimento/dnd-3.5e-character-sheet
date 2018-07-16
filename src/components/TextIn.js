@@ -9,6 +9,15 @@ const TextIn = props => (
   <TextInput
     style={styles.inpText}
     value={props.value}
+    onChangeText={text => {
+      switch (props.context) {
+        case 'className':
+          props.modifyName(text);
+          break;
+        default:
+          break;
+      }
+    }}
   />
 );
 

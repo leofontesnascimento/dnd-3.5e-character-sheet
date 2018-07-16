@@ -2,7 +2,6 @@ export * from './AbillityScoreModal';
 export * from './ArmorClassModal';
 export * from './AttackModal';
 export * from './BaseAttackModal';
-export * from './ClassModal';
 export * from './ExperienceModal';
 export * from './FlatFootedACModal';
 export * from './GrappleModal';

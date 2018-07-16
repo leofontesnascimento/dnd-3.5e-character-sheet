@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import {
   Button,
   StyleSheet,
@@ -11,17 +13,30 @@ import {
   LargeLabel
 } from '../components';
 
+import {
+  modifyName,
+  modifyLevel,
+  increaseLevel,
+  decreaseLevel
+} from '../actions/ClassActions';
+
 const ClassModal = props => (
   <View style={styles.container}>
     <LargeLabel label='Set your class and level' />
     <StatusInput
       label='Class'
-      value='Cleric'
+      value={props.name}
+      context='className'
+      modifyName={props.modifyName}
     />
     <StatusInput
       number
       label='Level'
-      value='1'
+      value={props.level}
+      context='classLevel'
+      modifyLevel={props.modifyLevel}
+      increaseLevel={props.increaseLevel}
+      decreaseLevel={props.decreaseLevel}
     />
     <View style={styles.viewFooter}>
       <View style={styles.viewButton}>
@@ -29,7 +44,6 @@ const ClassModal = props => (
           title='Cancel'
           color='#FA6900'
           onPress={() => {
-            console.log('Canceled');
             props.navigation.goBack();
           }}
         />
@@ -39,7 +53,6 @@ const ClassModal = props => (
           title='Confirm'
           color='#FA6900'
           onPress={() => {
-            console.log('Confirmed');
             props.navigation.goBack();
           }}
         />
@@ -67,4 +80,18 @@ const styles = StyleSheet.create({
   }
 });
 
-export { ClassModal };
+const mapStateToProps = state => (
+  {
+    name: state.ClassReducer.name,
+    level: state.ClassReducer.level
+  }
+);
+
+const actionCreators = {
+  modifyName,
+  modifyLevel,
+  increaseLevel,
+  decreaseLevel
+};
+
+export default connect(mapStateToProps, actionCreators)(ClassModal);

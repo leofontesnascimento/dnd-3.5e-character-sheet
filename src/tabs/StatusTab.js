@@ -79,8 +79,8 @@ class StatusTab extends Component {
               }}
             >
               <Class
-              charClass='Cleric'
-              lvl='1'
+                name={this.props.className}
+                level={this.props.classLevel}
               />
             </TouchableOpacity>
             <TouchableOpacity
@@ -160,7 +160,9 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => (
   {
     currentHitPoints: state.HitPointsReducer.current,
-    totalHitPoints: state.HitPointsReducer.total
+    totalHitPoints: state.HitPointsReducer.total,
+    className: state.ClassReducer.name,
+    classLevel: state.ClassReducer.level
   }
 );
 

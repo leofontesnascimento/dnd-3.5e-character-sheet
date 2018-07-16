@@ -34,6 +34,9 @@ const StatusInput = props => {
                   case 'totalHitPoints':
                     props.decreaseTotal();
                     break;
+                  case 'classLevel':
+                    props.decreaseLevel();
+                    break;
                   default:
                     break;
                 }
@@ -50,6 +53,7 @@ const StatusInput = props => {
                 context={props.context}
                 modifyCurrent={props.modifyCurrent}
                 modifyTotal={props.modifyTotal}
+                modifyLevel={props.modifyLevel}
               />
             </View>
           </View>
@@ -64,6 +68,9 @@ const StatusInput = props => {
                     break;
                   case 'totalHitPoints':
                     props.increaseTotal();
+                    break;
+                  case 'classLevel':
+                    props.increaseLevel();
                     break;
                   default:
                     break;
@@ -88,7 +95,11 @@ const StatusInput = props => {
               width: '100%'
             }}
           >
-            <TextIn value={props.value} />
+            <TextIn
+              value={props.value}
+              context={props.context}
+              modifyName={props.modifyName}
+            />
           </View>
         </View>
       </View>

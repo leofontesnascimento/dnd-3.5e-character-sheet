@@ -18,6 +18,9 @@ const NumberIn = props => (
         case 'totalHitPoints':
           props.modifyTotal(text);
           break;
+        case 'classLevel':
+          props.modifyLevel(text);
+          break;
         default:
           break;
       }

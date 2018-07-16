@@ -7,7 +7,7 @@ import {
 
 import { Status } from '../components';
 
-const StatusClass = props => (
+const Race = props => (
   <View style={styles.container}>
     <View
       style={{
@@ -15,8 +15,8 @@ const StatusClass = props => (
       }}
     >
       <Status
-        label='Class'
-        value={props.charClass}
+        label='Race'
+        value={props.race}
       />
     </View>
     <View
@@ -26,8 +26,8 @@ const StatusClass = props => (
       }}
     >
       <Status
-        label='Level'
-        value={props.lvl}
+        label='Hit Dice'
+        value={props.hitDice}
       />
     </View>
   </View>
@@ -43,4 +43,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export { StatusClass };
+export { Race };

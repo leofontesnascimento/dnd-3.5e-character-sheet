@@ -10,7 +10,7 @@ import {
   SmallLabel
 } from '../components';
 
-const StatusExperience = props => (
+const Experience = props => (
   <View style={styles.container}>
     <View
       style={{
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export { StatusExperience };
+export { Experience };

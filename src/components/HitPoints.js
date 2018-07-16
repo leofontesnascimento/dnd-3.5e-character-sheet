@@ -17,7 +17,7 @@ import {
 
 let firstUpdate = true;
 
-class StatusHitPoints extends Component {
+class HitPoints extends Component {
   componentDidUpdate() {
     if (!firstUpdate) {
       storeData({
@@ -104,4 +104,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export { StatusHitPoints };
+export { HitPoints };

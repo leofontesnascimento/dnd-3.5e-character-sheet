@@ -9,13 +9,13 @@ import {
 } from 'react-native';
 
 import {
+  Class,
   CombatBaseAttack,
   CombatInitiative,
-  SectionHeader,
-  StatusClass,
-  StatusExperience,
-  StatusHitPoints,
-  StatusRace
+  Experience,
+  HitPoints,
+  Race,
+  SectionHeader
 } from '../components';
 
 import {
@@ -62,7 +62,7 @@ class StatusTab extends Component {
                 this.props.navigation.navigate('HitPointsModal');
               }}
             >
-              <StatusHitPoints
+              <HitPoints
                 current={this.props.currentHitPoints}
                 total={this.props.totalHitPoints}
                 context='currentHitPoints'
@@ -78,7 +78,7 @@ class StatusTab extends Component {
                 this.props.navigation.navigate('ClassModal');
               }}
             >
-              <StatusClass
+              <Class
               charClass='Cleric'
               lvl='1'
               />
@@ -91,7 +91,7 @@ class StatusTab extends Component {
                 this.props.navigation.navigate('RaceModal');
               }}
             >
-              <StatusRace
+              <Race
                 race='Dwarf'
                 hitDice='1d8'
               />
@@ -104,7 +104,7 @@ class StatusTab extends Component {
                 this.props.navigation.navigate('ExperienceModal');
               }}
             >
-              <StatusExperience
+              <Experience
                 current='150'
                 total='300'
               />

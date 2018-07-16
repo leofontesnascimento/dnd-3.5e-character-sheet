@@ -18,6 +18,10 @@ import {
   modifyHitDice
 } from '../actions/RaceActions';
 
+import {
+  storeData
+} from '../storage/Storage';
+
 const RaceModal = props => (
   <View style={styles.container}>
     <LargeLabel label='Set your race and hit dice' />
@@ -48,6 +52,14 @@ const RaceModal = props => (
           title='Confirm'
           color='#FA6900'
           onPress={() => {
+            storeData({
+              key: '@DnDSuperStore:raceName',
+              value: props.raceName
+            });
+            storeData({
+              key: '@DnDSuperStore:hitDice',
+              value: props.hitDice
+            });
             props.navigation.goBack();
           }}
         />

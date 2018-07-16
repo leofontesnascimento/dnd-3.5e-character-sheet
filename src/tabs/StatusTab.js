@@ -31,6 +31,11 @@ import {
 } from '../actions/ClassActions';
 
 import {
+  modifyRaceName,
+  modifyHitDice
+} from '../actions/RaceActions';
+
+import {
   retrieveData
 } from '../storage/Storage';
 
@@ -58,6 +63,16 @@ class StatusTab extends Component {
     retrieveData('@DnDSuperStore:classLevel')
       .then((level) => {
         this.props.modifyLevel(level.toString());
+      });
+
+    retrieveData('@DnDSuperStore:raceName')
+      .then((name) => {
+        this.props.modifyRaceName(name.toString());
+      });
+
+    retrieveData('@DnDSuperStore:hitDice')
+      .then((hitDice) => {
+        this.props.modifyHitDice(hitDice.toString());
       });
   }
 
@@ -189,7 +204,9 @@ const actionCreators = {
   modifyCurrent,
   modifyTotal,
   modifyName,
-  modifyLevel
+  modifyLevel,
+  modifyRaceName,
+  modifyHitDice
 };
 
 export default connect(mapStateToProps, actionCreators)(StatusTab);

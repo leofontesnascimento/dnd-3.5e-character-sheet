@@ -26,6 +26,11 @@ import {
 } from '../actions/HitPointsActions';
 
 import {
+  modifyName,
+  modifyLevel
+} from '../actions/ClassActions';
+
+import {
   retrieveData
 } from '../storage/Storage';
 
@@ -43,6 +48,16 @@ class StatusTab extends Component {
     retrieveData('@DnDSuperStore:currentHitPoints')
       .then((current) => {
         this.props.modifyCurrent(current.toString());
+      });
+
+    retrieveData('@DnDSuperStore:className')
+      .then((name) => {
+        this.props.modifyName(name.toString());
+      });
+
+    retrieveData('@DnDSuperStore:classLevel')
+      .then((level) => {
+        this.props.modifyLevel(level.toString());
       });
   }
 
@@ -170,7 +185,9 @@ const actionCreators = {
   increaseCurrent,
   decreaseCurrent,
   modifyCurrent,
-  modifyTotal
+  modifyTotal,
+  modifyName,
+  modifyLevel
 };
 
 export default connect(mapStateToProps, actionCreators)(StatusTab);

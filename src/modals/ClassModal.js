@@ -20,6 +20,10 @@ import {
   decreaseLevel
 } from '../actions/ClassActions';
 
+import {
+  storeData
+} from '../storage/Storage';
+
 const ClassModal = props => (
   <View style={styles.container}>
     <LargeLabel label='Set your class and level' />
@@ -53,6 +57,14 @@ const ClassModal = props => (
           title='Confirm'
           color='#FA6900'
           onPress={() => {
+            storeData({
+              key: '@DnDSuperStore:className',
+              value: props.name
+            });
+            storeData({
+              key: '@DnDSuperStore:classLevel',
+              value: props.level
+            });
             props.navigation.goBack();
           }}
         />

@@ -6,7 +6,6 @@ export * from './ExperienceModal';
 export * from './FlatFootedACModal';
 export * from './GrappleModal';
 export * from './InitiativeModal';
-export * from './RaceModal';
 export * from './SavingThrowModal';
 export * from './SkillModal';
 export * from './SpeedModal';

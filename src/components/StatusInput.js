@@ -99,6 +99,8 @@ const StatusInput = props => {
               value={props.value}
               context={props.context}
               modifyName={props.modifyName}
+              modifyRaceName={props.modifyRaceName}
+              modifyHitDice={props.modifyHitDice}
             />
           </View>
         </View>

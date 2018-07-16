@@ -14,6 +14,12 @@ const TextIn = props => (
         case 'className':
           props.modifyName(text);
           break;
+        case 'raceName':
+          props.modifyRaceName(text);
+          break;
+        case 'hitDice':
+          props.modifyHitDice(text);
+          break;
         default:
           break;
       }

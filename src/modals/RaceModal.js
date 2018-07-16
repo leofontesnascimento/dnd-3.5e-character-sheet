@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import {
   Button,
   StyleSheet,
@@ -11,16 +13,25 @@ import {
   LargeLabel
 } from '../components';
 
+import {
+  modifyRaceName,
+  modifyHitDice
+} from '../actions/RaceActions';
+
 const RaceModal = props => (
   <View style={styles.container}>
     <LargeLabel label='Set your race and hit dice' />
     <StatusInput
       label='Race'
-      value='Dwarf'
+      value={props.raceName}
+      context='raceName'
+      modifyRaceName={props.modifyRaceName}
     />
     <StatusInput
       label='Hit Dice'
-      value='1d8'
+      value={props.hitDice}
+      context='hitDice'
+      modifyHitDice={props.modifyHitDice}
     />
     <View style={styles.viewFooter}>
       <View style={styles.viewButton}>
@@ -28,7 +39,6 @@ const RaceModal = props => (
           title='Cancel'
           color='#FA6900'
           onPress={() => {
-            console.log('Canceled');
             props.navigation.goBack();
           }}
         />
@@ -38,7 +48,6 @@ const RaceModal = props => (
           title='Confirm'
           color='#FA6900'
           onPress={() => {
-            console.log('Confirmed');
             props.navigation.goBack();
           }}
         />
@@ -66,4 +75,16 @@ const styles = StyleSheet.create({
   }
 });
 
-export { RaceModal };
+const mapStateToProps = state => (
+  {
+    raceName: state.RaceReducer.raceName,
+    hitDice: state.RaceReducer.hitDice
+  }
+);
+
+const actionCreators = {
+  modifyRaceName,
+  modifyHitDice
+};
+
+export default connect(mapStateToProps, actionCreators)(RaceModal);

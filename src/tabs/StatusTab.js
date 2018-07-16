@@ -107,8 +107,8 @@ class StatusTab extends Component {
               }}
             >
               <Race
-                race='Dwarf'
-                hitDice='1d8'
+                raceName={this.props.raceName}
+                hitDice={this.props.hitDice}
               />
             </TouchableOpacity>
             <TouchableOpacity
@@ -177,7 +177,9 @@ const mapStateToProps = state => (
     currentHitPoints: state.HitPointsReducer.current,
     totalHitPoints: state.HitPointsReducer.total,
     className: state.ClassReducer.name,
-    classLevel: state.ClassReducer.level
+    classLevel: state.ClassReducer.level,
+    raceName: state.RaceReducer.raceName,
+    hitDice: state.RaceReducer.hitDice
   }
 );
 

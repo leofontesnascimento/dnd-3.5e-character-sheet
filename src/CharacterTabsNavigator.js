@@ -22,7 +22,6 @@ import {
   FlatFootedACModal,
   GrappleModal,
   InitiativeModal,
-  RaceModal,
   SavingThrowModal,
   SkillModal,
   SpeedModal,
@@ -32,6 +31,7 @@ import {
 
 import ClassModal from './modals/ClassModal';
 import HitPointsModal from './modals/HitPointsModal';
+import RaceModal from './modals/RaceModal';
 
 import {
   MenuIcon,

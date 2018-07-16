@@ -16,7 +16,7 @@ const Race = props => (
     >
       <Status
         label='Race'
-        value={props.race}
+        value={props.raceName}
       />
     </View>
     <View

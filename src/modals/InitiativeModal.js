@@ -23,6 +23,10 @@ import {
   modifyInitiative
 } from '../actions/InitiativeActions';
 
+import {
+  storeData
+} from '../storage/Storage';
+
 const InitiativeModal = props => (
   <View style={styles.container}>
     <LargeLabel label='Set your initiative' />
@@ -60,6 +64,14 @@ const InitiativeModal = props => (
           color='#FA6900'
           onPress={() => {
             props.modifyInitiative();
+            storeData({
+              key: '@DnDSuperStore:iniDexModifier',
+              value: props.iniDexModifier
+            });
+            storeData({
+              key: '@DnDSuperStore:iniMiscModifier',
+              value: props.iniMiscModifier
+            });
             props.navigation.goBack();
           }}
         />

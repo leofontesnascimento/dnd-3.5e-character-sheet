@@ -41,6 +41,8 @@ import {
 } from '../actions/ExperienceActions';
 
 import {
+  modifyIniDexModifier,
+  modifyIniMiscModifier,
   modifyInitiative
 } from '../actions/InitiativeActions';
 
@@ -92,6 +94,18 @@ class StatusTab extends Component {
     retrieveData('@DnDSuperStore:currentExperience')
       .then((current) => {
         this.props.modifyCurrentExperience(current.toString());
+      });
+
+    retrieveData('@DnDSuperStore:iniDexModifier')
+      .then((iniDexModifier) => {
+        this.props.modifyIniDexModifier(iniDexModifier.toString());
+        this.props.modifyInitiative();
+      });
+
+    retrieveData('@DnDSuperStore:iniMiscModifier')
+      .then((iniMiscModifier) => {
+        this.props.modifyIniMiscModifier(iniMiscModifier.toString());
+        this.props.modifyInitiative();
       });
   }
 
@@ -233,7 +247,9 @@ const actionCreators = {
   modifyHitDice,
   modifyCurrentExperience,
   modifyTotalExperience,
-  modifyInitiative
+  modifyInitiative,
+  modifyIniDexModifier,
+  modifyIniMiscModifier
 };
 
 export default connect(mapStateToProps, actionCreators)(StatusTab);

@@ -18,7 +18,6 @@ import {
   ArmorClassModal,
   AttackModal,
   BaseAttackModal,
-  ExperienceModal,
   FlatFootedACModal,
   GrappleModal,
   InitiativeModal,
@@ -29,6 +28,7 @@ import {
   TouchACModal
 } from './modals';
 
+import ExperienceModal from './modals/ExperienceModal';
 import ClassModal from './modals/ClassModal';
 import HitPointsModal from './modals/HitPointsModal';
 import RaceModal from './modals/RaceModal';

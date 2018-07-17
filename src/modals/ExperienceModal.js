@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import {
   Button,
   StyleSheet,
@@ -11,18 +13,35 @@ import {
   LargeLabel
 } from '../components';
 
+import {
+  decreaseCurrentExperience,
+  decreaseTotalExperience,
+  increaseCurrentExperience,
+  increaseTotalExperience,
+  modifyCurrentExperience,
+  modifyTotalExperience
+} from '../actions/ExperienceActions';
+
 const ExperienceModal = props => (
   <View style={styles.container}>
     <LargeLabel label='Set your experience points' />
     <StatusInput
       number
       label='Current'
-      value='150'
+      value={props.currentExperience}
+      context='currentExperience'
+      modifyCurrentExperience={props.modifyCurrentExperience}
+      increaseCurrentExperience={props.increaseCurrentExperience}
+      decreaseCurrentExperience={props.decreaseCurrentExperience}
     />
     <StatusInput
       number
       label='Total'
-      value='300'
+      value={props.totalExperience}
+      context='totalExperience'
+      modifyTotalExperience={props.modifyTotalExperience}
+      increaseTotalExperience={props.increaseTotalExperience}
+      decreaseTotalExperience={props.decreaseTotalExperience}
     />
     <View style={styles.viewFooter}>
       <View style={styles.viewButton}>
@@ -68,4 +87,20 @@ const styles = StyleSheet.create({
   }
 });
 
-export { ExperienceModal };
+const mapStateToProps = state => (
+  {
+    currentExperience: state.ExperienceReducer.currentExperience,
+    totalExperience: state.ExperienceReducer.totalExperience
+  }
+);
+
+const actionCreators = {
+  increaseCurrentExperience,
+  decreaseCurrentExperience,
+  modifyCurrentExperience,
+  increaseTotalExperience,
+  decreaseTotalExperience,
+  modifyTotalExperience
+};
+
+export default connect(mapStateToProps, actionCreators)(ExperienceModal);

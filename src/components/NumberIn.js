@@ -21,6 +21,12 @@ const NumberIn = props => (
         case 'classLevel':
           props.modifyClassLevel(text);
           break;
+        case 'currentExperience':
+          props.modifyCurrentExperience(text);
+          break;
+        case 'totalExperience':
+          props.modifyTotalExperience(text);
+          break;
         default:
           break;
       }

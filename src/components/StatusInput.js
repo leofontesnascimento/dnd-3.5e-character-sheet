@@ -37,6 +37,12 @@ const StatusInput = props => {
                   case 'classLevel':
                     props.decreaseClassLevel();
                     break;
+                  case 'currentExperience':
+                    props.decreaseCurrentExperience();
+                    break;
+                  case 'totalExperience':
+                    props.decreaseTotalExperience();
+                    break;
                   default:
                     break;
                 }
@@ -54,6 +60,8 @@ const StatusInput = props => {
                 modifyCurrent={props.modifyCurrent}
                 modifyTotal={props.modifyTotal}
                 modifyClassLevel={props.modifyClassLevel}
+                modifyCurrentExperience={props.modifyCurrentExperience}
+                modifyTotalExperience={props.modifyTotalExperience}
               />
             </View>
           </View>
@@ -71,6 +79,12 @@ const StatusInput = props => {
                     break;
                   case 'classLevel':
                     props.increaseClassLevel();
+                    break;
+                  case 'currentExperience':
+                    props.increaseCurrentExperience();
+                    break;
+                  case 'totalExperience':
+                    props.increaseTotalExperience();
                     break;
                   default:
                     break;

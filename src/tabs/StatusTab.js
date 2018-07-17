@@ -39,6 +39,11 @@ import {
   retrieveData
 } from '../storage/Storage';
 
+import {
+  modifyCurrentExperience,
+  modifyTotalExperience
+} from '../actions/ExperienceActions';
+
 class StatusTab extends Component {
   static navigationOptions = {
     title: 'Character',
@@ -135,8 +140,8 @@ class StatusTab extends Component {
               }}
             >
               <Experience
-                current='150'
-                total='300'
+                current={this.props.currentExperience}
+                total={this.props.totalExperience}
               />
             </TouchableOpacity>
           </View>
@@ -194,7 +199,9 @@ const mapStateToProps = state => (
     className: state.ClassReducer.className,
     classLevel: state.ClassReducer.classLevel,
     raceName: state.RaceReducer.raceName,
-    hitDice: state.RaceReducer.hitDice
+    hitDice: state.RaceReducer.hitDice,
+    currentExperience: state.ExperienceReducer.currentExperience,
+    totalExperience: state.ExperienceReducer.totalExperience
   }
 );
 
@@ -206,7 +213,9 @@ const actionCreators = {
   modifyClassName,
   modifyClassLevel,
   modifyRaceName,
-  modifyHitDice
+  modifyHitDice,
+  modifyCurrentExperience,
+  modifyTotalExperience
 };
 
 export default connect(mapStateToProps, actionCreators)(StatusTab);

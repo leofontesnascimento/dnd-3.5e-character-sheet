@@ -79,6 +79,16 @@ class StatusTab extends Component {
       .then((hitDice) => {
         this.props.modifyHitDice(hitDice.toString());
       });
+
+    retrieveData('@DnDSuperStore:totalExperience')
+      .then((total) => {
+        this.props.modifyTotalExperience(total.toString());
+      });
+
+    retrieveData('@DnDSuperStore:currentExperience')
+      .then((current) => {
+        this.props.modifyCurrentExperience(current.toString());
+      });
   }
 
   render() {

@@ -22,6 +22,10 @@ import {
   modifyTotalExperience
 } from '../actions/ExperienceActions';
 
+import {
+  storeData
+} from '../storage/Storage';
+
 const ExperienceModal = props => (
   <View style={styles.container}>
     <LargeLabel label='Set your experience points' />
@@ -49,7 +53,6 @@ const ExperienceModal = props => (
           title='Cancel'
           color='#FA6900'
           onPress={() => {
-            console.log('Canceled');
             props.navigation.goBack();
           }}
         />
@@ -59,7 +62,14 @@ const ExperienceModal = props => (
           title='Confirm'
           color='#FA6900'
           onPress={() => {
-            console.log('Confirmed');
+            storeData({
+              key: '@DnDSuperStore:currentExperience',
+              value: props.currentExperience
+            });
+            storeData({
+              key: '@DnDSuperStore:totalExperience',
+              value: props.totalExperience
+            });
             props.navigation.goBack();
           }}
         />

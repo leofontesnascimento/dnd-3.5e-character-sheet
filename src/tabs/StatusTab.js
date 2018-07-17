@@ -19,10 +19,10 @@ import {
 } from '../components';
 
 import {
-  increaseCurrent,
-  decreaseCurrent,
-  modifyCurrent,
-  modifyTotal
+  increaseCurrentHitPoints,
+  decreaseCurrentHitPoints,
+  modifyCurrentHitPoints,
+  modifyTotalHitPoints
 } from '../actions/HitPointsActions';
 
 import {
@@ -47,12 +47,12 @@ class StatusTab extends Component {
   componentWillMount() {
     retrieveData('@DnDSuperStore:totalHitPoints')
       .then((total) => {
-        this.props.modifyTotal(total.toString());
+        this.props.modifyTotalHitPoints(total.toString());
       });
 
     retrieveData('@DnDSuperStore:currentHitPoints')
       .then((current) => {
-        this.props.modifyCurrent(current.toString());
+        this.props.modifyCurrentHitPoints(current.toString());
       });
 
     retrieveData('@DnDSuperStore:className')
@@ -93,11 +93,11 @@ class StatusTab extends Component {
               }}
             >
               <HitPoints
-                current={this.props.currentHitPoints}
-                total={this.props.totalHitPoints}
+                currentHitPoints={this.props.currentHitPoints}
+                totalHitPoints={this.props.totalHitPoints}
                 context='currentHitPoints'
-                increaseCurrent={this.props.increaseCurrent}
-                decreaseCurrent={this.props.decreaseCurrent}
+                increaseCurrentHitPoints={this.props.increaseCurrentHitPoints}
+                decreaseCurrentHitPoints={this.props.decreaseCurrentHitPoints}
               />
             </TouchableOpacity>
             <TouchableOpacity
@@ -189,8 +189,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => (
   {
-    currentHitPoints: state.HitPointsReducer.current,
-    totalHitPoints: state.HitPointsReducer.total,
+    currentHitPoints: state.HitPointsReducer.currentHitPoints,
+    totalHitPoints: state.HitPointsReducer.totalHitPoints,
     className: state.ClassReducer.className,
     classLevel: state.ClassReducer.classLevel,
     raceName: state.RaceReducer.raceName,
@@ -199,10 +199,10 @@ const mapStateToProps = state => (
 );
 
 const actionCreators = {
-  increaseCurrent,
-  decreaseCurrent,
-  modifyCurrent,
-  modifyTotal,
+  increaseCurrentHitPoints,
+  decreaseCurrentHitPoints,
+  modifyCurrentHitPoints,
+  modifyTotalHitPoints,
   modifyClassName,
   modifyClassLevel,
   modifyRaceName,

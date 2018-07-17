@@ -1,41 +1,41 @@
-export const modifyCurrent = (text) => (
+export const modifyCurrentHitPoints = (text) => (
   {
-    type: 'modify_current',
+    type: 'modify_current_hit_points',
     payload: text
   }
 );
 
-export const increaseCurrent = () => (
+export const increaseCurrentHitPoints = () => (
   {
-    type: 'increase_current',
+    type: 'increase_current_hit_points',
     payload: 1
   }
 );
 
-export const decreaseCurrent = () => (
+export const decreaseCurrentHitPoints = () => (
   {
-    type: 'decrease_current',
+    type: 'decrease_current_hit_points',
     payload: 1
   }
 );
 
-export const modifyTotal = (text) => (
+export const modifyTotalHitPoints = (text) => (
   {
-    type: 'modify_total',
+    type: 'modify_total_hit_points',
     payload: text
   }
 );
 
-export const increaseTotal = () => (
+export const increaseTotalHitPoints = () => (
   {
-    type: 'increase_total',
+    type: 'increase_total_hit_points',
     payload: 1
   }
 );
 
-export const decreaseTotal = () => (
+export const decreaseTotalHitPoints = () => (
   {
-    type: 'decrease_total',
+    type: 'decrease_total_hit_points',
     payload: 1
   }
 );

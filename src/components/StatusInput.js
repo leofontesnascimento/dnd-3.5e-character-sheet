@@ -29,10 +29,10 @@ const StatusInput = props => {
               onPress={() => {
                 switch (props.context) {
                   case 'currentHitPoints':
-                    props.decreaseCurrent();
+                    props.decreaseCurrentHitPoints();
                     break;
                   case 'totalHitPoints':
-                    props.decreaseTotal();
+                    props.decreaseTotalHitPoints();
                     break;
                   case 'classLevel':
                     props.decreaseClassLevel();
@@ -64,10 +64,10 @@ const StatusInput = props => {
               onPress={() => {
                 switch (props.context) {
                   case 'currentHitPoints':
-                    props.increaseCurrent();
+                    props.increaseCurrentHitPoints();
                     break;
                   case 'totalHitPoints':
-                    props.increaseTotal();
+                    props.increaseTotalHitPoints();
                     break;
                   case 'classLevel':
                     props.increaseClassLevel();

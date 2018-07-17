@@ -14,12 +14,12 @@ import {
 } from '../components';
 
 import {
-  increaseCurrent,
-  decreaseCurrent,
-  modifyCurrent,
-  increaseTotal,
-  decreaseTotal,
-  modifyTotal
+  increaseCurrentHitPoints,
+  decreaseCurrentHitPoints,
+  modifyCurrentHitPoints,
+  increaseTotalHitPoints,
+  decreaseTotalHitPoints,
+  modifyTotalHitPoints
 } from '../actions/HitPointsActions';
 
 import {
@@ -32,20 +32,20 @@ const HitPointsModal = props => (
     <StatusInput
       number
       label='Current'
-      value={props.current}
+      value={props.currentHitPoints}
       context='currentHitPoints'
-      modifyCurrent={props.modifyCurrent}
-      increaseCurrent={props.increaseCurrent}
-      decreaseCurrent={props.decreaseCurrent}
+      modifyCurrentHitPoints={props.modifyCurrentHitPoints}
+      increaseCurrentHitPoints={props.increaseCurrentHitPoints}
+      decreaseCurrentHitPoints={props.decreaseCurrentHitPoints}
     />
     <StatusInput
       number
       label='Total'
-      value={props.total}
+      value={props.totalHitPoints}
       context='totalHitPoints'
-      modifyTotal={props.modifyTotal}
-      increaseTotal={props.increaseTotal}
-      decreaseTotal={props.decreaseTotal}
+      modifyTotalHitPoints={props.modifyTotalHitPoints}
+      increaseTotalHitPoints={props.increaseTotalHitPoints}
+      decreaseTotalHitPoints={props.decreaseTotalHitPoints}
     />
     <View style={styles.viewFooter}>
       <View style={styles.viewButton}>
@@ -64,11 +64,11 @@ const HitPointsModal = props => (
           onPress={() => {
             storeData({
               key: '@DnDSuperStore:currentHitPoints',
-              value: props.current
+              value: props.currentHitPoints
             });
             storeData({
               key: '@DnDSuperStore:totalHitPoints',
-              value: props.total
+              value: props.totalHitPoints
             });
             props.navigation.goBack();
           }}
@@ -99,18 +99,18 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => (
   {
-    current: state.HitPointsReducer.current,
-    total: state.HitPointsReducer.total
+    currentHitPoints: state.HitPointsReducer.currentHitPoints,
+    totalHitPoints: state.HitPointsReducer.totalHitPoints
   }
 );
 
 const actionCreators = {
-  increaseCurrent,
-  decreaseCurrent,
-  modifyCurrent,
-  increaseTotal,
-  decreaseTotal,
-  modifyTotal
+  increaseCurrentHitPoints,
+  decreaseCurrentHitPoints,
+  modifyCurrentHitPoints,
+  increaseTotalHitPoints,
+  decreaseTotalHitPoints,
+  modifyTotalHitPoints
 };
 
 export default connect(mapStateToProps, actionCreators)(HitPointsModal);

@@ -1,53 +1,53 @@
 const INITIAL_STATE = {
-  current: 0,
-  total: 0
+  currentHitPoints: 0,
+  totalHitPoints: 0
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'modify_current':
+    case 'modify_current_hit_points':
       return {
         ...state,
-        current:
-        parseInt(action.payload, 10) < state.total
+        currentHitPoints:
+        parseInt(action.payload, 10) < state.totalHitPoints
         ? parseInt(action.payload, 10)
-        : state.total
+        : state.totalHitPoints
       };
-    case 'increase_current':
+    case 'increase_current_hit_points':
       return {
         ...state,
-        current:
-        state.current < state.total
-        ? state.current + action.payload
-        : state.total
+        currentHitPoints:
+        state.currentHitPoints < state.totalHitPoints
+        ? state.currentHitPoints + action.payload
+        : state.totalHitPoints
       };
-    case 'decrease_current':
+    case 'decrease_current_hit_points':
       return {
         ...state,
-        current:
-        state.current > 0
-        ? state.current - action.payload
+        currentHitPoints:
+        state.currentHitPoints > 0
+        ? state.currentHitPoints - action.payload
         : 0
       };
-    case 'modify_total':
+    case 'modify_total_hit_points':
       return {
         ...state,
-        total:
-        parseInt(action.payload, 10) > state.current
+        totalHitPoints:
+        parseInt(action.payload, 10) > state.currentHitPoints
         ? parseInt(action.payload, 10)
-        : state.current
+        : state.currentHitPoints
       };
-    case 'increase_total':
+    case 'increase_total_hit_points':
       return {
         ...state,
-        total: state.total + action.payload
+        totalHitPoints: state.totalHitPoints + action.payload
       };
-    case 'decrease_total':
+    case 'decrease_total_hit_points':
       return {
         ...state,
-        total: state.total > state.current
-        ? state.total - action.payload
-        : state.current
+        totalHitPoints: state.totalHitPoints > state.currentHitPoints
+        ? state.totalHitPoints - action.payload
+        : state.currentHitPoints
       };
     default:
       return state;

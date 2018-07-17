@@ -22,7 +22,7 @@ class HitPoints extends Component {
     if (!firstUpdate) {
       storeData({
         key: '@DnDSuperStore:currentHitPoints',
-        value: this.props.current
+        value: this.props.currentHitPoints
       });
     }
 
@@ -53,7 +53,7 @@ class HitPoints extends Component {
               onPress={() => {
                 switch (this.props.context) {
                   case 'currentHitPoints':
-                    this.props.decreaseCurrent();
+                    this.props.decreaseCurrentHitPoints();
                     break;
                   default:
                     break;
@@ -68,9 +68,9 @@ class HitPoints extends Component {
               alignItems: 'center'
             }}
           >
-            <LargeLabel label={this.props.current.toString()} />
+            <LargeLabel label={this.props.currentHitPoints.toString()} />
             <SmallLabel label=' / ' />
-            <SmallLabel label={this.props.total.toString()} />
+            <SmallLabel label={this.props.totalHitPoints.toString()} />
           </View>
           <View style={styles.btnHitPoints}>
             <Button
@@ -79,7 +79,7 @@ class HitPoints extends Component {
               onPress={() => {
                 switch (this.props.context) {
                   case 'currentHitPoints':
-                    this.props.increaseCurrent();
+                    this.props.increaseCurrentHitPoints();
                     break;
                   default:
                     break;

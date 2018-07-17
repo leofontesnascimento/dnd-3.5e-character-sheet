@@ -43,6 +43,12 @@ const StatusInput = props => {
                   case 'totalExperience':
                     props.decreaseTotalExperience();
                     break;
+                  case 'iniDexModifier':
+                    props.decreaseIniDexModifier();
+                    break;
+                  case 'iniMiscModifier':
+                    props.decreaseIniMiscModifier();
+                    break;
                   default:
                     break;
                 }
@@ -62,6 +68,8 @@ const StatusInput = props => {
                 modifyClassLevel={props.modifyClassLevel}
                 modifyCurrentExperience={props.modifyCurrentExperience}
                 modifyTotalExperience={props.modifyTotalExperience}
+                modifyIniDexModifier={props.modifyIniDexModifier}
+                modifyIniMiscModifier={props.modifyIniMiscModifier}
               />
             </View>
           </View>
@@ -85,6 +93,12 @@ const StatusInput = props => {
                     break;
                   case 'totalExperience':
                     props.increaseTotalExperience();
+                    break;
+                  case 'iniDexModifier':
+                    props.increaseIniDexModifier();
+                    break;
+                  case 'iniMiscModifier':
+                    props.increaseIniMiscModifier();
                     break;
                   default:
                     break;

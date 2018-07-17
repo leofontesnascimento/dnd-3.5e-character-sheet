@@ -20,7 +20,6 @@ import {
   BaseAttackModal,
   FlatFootedACModal,
   GrappleModal,
-  InitiativeModal,
   SavingThrowModal,
   SkillModal,
   SpeedModal,
@@ -31,6 +30,7 @@ import {
 import ExperienceModal from './modals/ExperienceModal';
 import ClassModal from './modals/ClassModal';
 import HitPointsModal from './modals/HitPointsModal';
+import InitiativeModal from './modals/InitiativeModal';
 import RaceModal from './modals/RaceModal';
 
 import {

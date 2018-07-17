@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import {
   Button,
   StyleSheet,
@@ -11,18 +13,36 @@ import {
   LargeLabel
 } from '../components';
 
+import {
+  decreaseIniDexModifier,
+  decreaseIniMiscModifier,
+  increaseIniDexModifier,
+  increaseIniMiscModifier,
+  modifyIniDexModifier,
+  modifyIniMiscModifier,
+  modifyInitiative
+} from '../actions/InitiativeActions';
+
 const InitiativeModal = props => (
   <View style={styles.container}>
     <LargeLabel label='Set your initiative' />
     <StatusInput
       number
       label='Dex Modifier'
-      value='2'
+      value={props.iniDexModifier}
+      context='iniDexModifier'
+      modifyIniDexModifier={props.modifyIniDexModifier}
+      increaseIniDexModifier={props.increaseIniDexModifier}
+      decreaseIniDexModifier={props.decreaseIniDexModifier}
     />
     <StatusInput
       number
       label='Misc Modifier'
-      value='0'
+      value={props.iniMiscModifier}
+      context={'iniMiscModifier'}
+      modifyIniMiscModifier={props.modifyIniMiscModifier}
+      increaseIniMiscModifier={props.increaseIniMiscModifier}
+      decreaseIniMiscModifier={props.decreaseIniMiscModifier}
     />
     <View style={styles.viewFooter}>
       <View style={styles.viewButton}>
@@ -30,7 +50,6 @@ const InitiativeModal = props => (
           title='Cancel'
           color='#FA6900'
           onPress={() => {
-            console.log('Canceled');
             props.navigation.goBack();
           }}
         />
@@ -40,7 +59,7 @@ const InitiativeModal = props => (
           title='Confirm'
           color='#FA6900'
           onPress={() => {
-            console.log('Confirmed');
+            props.modifyInitiative();
             props.navigation.goBack();
           }}
         />
@@ -68,4 +87,21 @@ const styles = StyleSheet.create({
   }
 });
 
-export { InitiativeModal };
+const mapStateToProps = state => (
+  {
+    iniDexModifier: state.InitiativeReducer.iniDexModifier,
+    iniMiscModifier: state.InitiativeReducer.iniMiscModifier
+  }
+);
+
+const actionCreators = {
+  modifyInitiative,
+  modifyIniDexModifier,
+  increaseIniDexModifier,
+  decreaseIniDexModifier,
+  modifyIniMiscModifier,
+  increaseIniMiscModifier,
+  decreaseIniMiscModifier
+};
+
+export default connect(mapStateToProps, actionCreators)(InitiativeModal);

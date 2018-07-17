@@ -36,13 +36,17 @@ import {
 } from '../actions/RaceActions';
 
 import {
-  retrieveData
-} from '../storage/Storage';
-
-import {
   modifyCurrentExperience,
   modifyTotalExperience
 } from '../actions/ExperienceActions';
+
+import {
+  modifyInitiative
+} from '../actions/InitiativeActions';
+
+import {
+  retrieveData
+} from '../storage/Storage';
 
 class StatusTab extends Component {
   static navigationOptions = {
@@ -162,7 +166,7 @@ class StatusTab extends Component {
           </View>
           <View style={styles.content}>
             <CombatInitiative
-              initiative='2'
+              initiative={this.props.initiative}
               armorClass='12'
               speed='30'
               grappleModifier='5'
@@ -211,7 +215,10 @@ const mapStateToProps = state => (
     raceName: state.RaceReducer.raceName,
     hitDice: state.RaceReducer.hitDice,
     currentExperience: state.ExperienceReducer.currentExperience,
-    totalExperience: state.ExperienceReducer.totalExperience
+    totalExperience: state.ExperienceReducer.totalExperience,
+    initiative: state.InitiativeReducer.initiative,
+    iniDexModifier: state.InitiativeReducer.iniDexModifier,
+    iniMiscModifier: state.InitiativeReducer.iniMiscModifier
   }
 );
 
@@ -225,7 +232,8 @@ const actionCreators = {
   modifyRaceName,
   modifyHitDice,
   modifyCurrentExperience,
-  modifyTotalExperience
+  modifyTotalExperience,
+  modifyInitiative
 };
 
 export default connect(mapStateToProps, actionCreators)(StatusTab);

@@ -27,6 +27,12 @@ const NumberIn = props => (
         case 'totalExperience':
           props.modifyTotalExperience(text);
           break;
+        case 'iniDexModifier':
+          props.modifyIniDexModifier(text);
+          break;
+        case 'iniMiscModifier':
+          props.modifyIniMiscModifier(text);
+          break;
         default:
           break;
       }
